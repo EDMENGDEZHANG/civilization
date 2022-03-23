@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+
+
+	<head>
+		<title> 文化有约-文化休闲何处去，公益场馆零距离。 </title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="renderer" content="webkit">
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="keywords" content="文化有约,公共文化服务，文化产业，文化产品">
+		<meta name="author" content="文化有约网站">
+		<meta name="description" content="文化休闲何处去，公益场馆零距离 ">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" href="./static/image/favicon.ico" />
+
+		<!-- Bootstrap -->
+		<link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Icon Fonts -->
+		<link href="static/css/font-awesome.css" rel="stylesheet">
+
+		<!-- Owl Carousel Assets -->
+		<link href="static/css/owl.carousel.css" rel="stylesheet">
+		<link href="static/css/owl.theme.css" rel="stylesheet">
+		<link href="static/css/owl.transitions.css" rel="stylesheet">
+
+		<!-- Theme -->
+		<link href="static/css/theme-responsive.css" rel="stylesheet">
+		<link href="static/css/theme-animate.css" rel="stylesheet">
+		<link href="static/css/theme-elements.css" rel="stylesheet">
+		<link href="static/css/theme-blog.css" rel="stylesheet">
+		<link href="static/css/theme-shop.css" rel="stylesheet">
+		<link href="static/css/theme.css" rel="stylesheet">
+
+		<link href="static/css/frontend-common.css" rel="stylesheet">
+		<link href="static/css/style.css" rel="stylesheet">
+
+		<!-- Visit Counter -->
+		<link href="static/css/odometer-theme-car.css" rel="stylesheet">
+
+	</head>
+	<body>
+		<div id="page">
+
+			<header>
+			<div class="top" style=""></div>
+			</header>
+			<div class="page-404">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+
+							<!-- MAIN CONTENT -->
+							<div id="content">
+								<div class="row">
+									<div>
+										<div>
+											<header>
+												<h3>预约列表</h3>
+											</header>
+											<div>
+												<!-- widget content -->
+												<div>
+													<table id="dt_basic" class="table table-striped table-bordered table-hover">
+														<thead>
+															<tr>
+																<th nowrap="nowrap" class="text-center">序号</th>
+																<th class="text-center">活动名称</th>
+																<th class="text-center">人数</th>
+																<th nowrap="nowrap" class="text-center">活动时间</th>
+																<th nowrap="nowrap" class="text-center">活动类型</th>
+																<!-- <th nowrap="nowrap" class="text-center">创建时间</th> -->
+																<th nowrap="nowrap" class="text-center">预约状态</th>
+																<!-- <th nowrap="nowrap" class="text-center">幸运编号</th> -->
+																<th nowrap="nowrap" class="text-center">操作</th>
+															</tr>
+														</thead>
+														<tbody style="text-align: center;">
+															
+														</tbody>
+													</table>
+												</div>
+												<!-- end widget content -->
+											</div>
+											<!-- end widget div -->
+
+										</div>
+
+
+									</div>
+
+								</div>
+
+							</div>
+							<!-- END MAIN CONTENT -->
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="foot" style=""></div>
+			<div class="bootbox modal fade bootbox-confirm in" id="modal2" tabindex="-1" role="dialog" aria-hidden="false">
+				<div class="modal-dialog" style="margin: 150px auto;">
+					<div class="modal-content" style="border-radius: 0px;">
+						<div class="modal-body"><button id="exitButton" type="button" class="bootbox-close-button close" data-dismiss="modal"
+														aria-hidden="true" style="margin-top: -10px;" onclick="exitModel()">×</button>
+							<div style="text-align: center;margin-top: 20px;" id="text">
+							</div>
+							<div style="text-align: center;margin-top: 10px;" id="text_code">
+								<img id="code"><!-- 二维码 -->
+								<br>
+								<br>[支付宝]扫一扫进行支付
+							</div>
+						</div>
+						<div class="modal-footer"><button data-bb-handler="confirm" type="button" class="btn btn-default"
+														  onclick="payReload()" style="background-color: #f1b236;border: 1px solid #f1b236;">已支付,刷新页面</button></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="bootbox modal fade bootbox-confirm in" id="tipModel" tabindex="-1" role="dialog" aria-hidden="false">
+				<div class="modal-dialog" style="margin: 150px auto;">
+					<div class="modal-content" style="border-radius: 0px;">
+						<div class="modal-body"></button>
+							<div style="text-align: center;margin-top: 20px;" id="tip_text">
+							</div>
+						</div>
+						<div class="modal-footer"><button data-bb-handler="confirm" type="button" class="btn btn-default"
+																	 onclick="closeTip()" style="background-color: #f1b236;border: 1px solid #f1b236;">确认</button></div>
+					</div>
+				</div>
+			</div>
+			<!-- 退款表单 start -->
+			<div class="bootbox modal fade bootbox-confirm in" id="refundModal" tabindex="-1" role="dialog" aria-hidden="false">
+				<!-- style="display: none;" -->
+				<div class="modal-dialog" style="margin: 80px auto; width: 1000px;">
+					<div class="modal-content" style="border-radius: 0px;">
+						<div class="modal-body" style="max-height: 600px; overflow-y: auto;">
+							<button type="button" class="bootbox-close-button close" data-dismiss="modal" aria-hidden="true"
+									style="margin-top: -10px;" onclick="refundHide()">×</button>
+							<div class="bootbox-body" style="text-align: center;font-size: 15px;">申请退款</div>
+							<div class="comment-body">
+								<div class="comment-body-item">
+									<div class="comment-body-item_label">退款原因:</div>
+									<div class="comment-body-item_content">
+										<textarea id="refundReson" style="width: 100%; height: 100px;" placeholder="请输入退款原因..."></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<div style="width: 75%;float: left;text-align: center;padding-left: 140px;line-height: 44px;">
+								<span id="tips" style="color:#ed4014;"></span>
+							</div>
+							<button id="submitCommentBtn" data-bb-handler="confirm" type="button" class="btn btn-default" onclick="submitRefund()"
+									style="background-color: #f1b236;border: 1px solid #f1b236;outline: none;">确认</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 退款表单 end -->
+			<script src="static/js/jquery.min.js"></script>
+			<script src="static/js/bootstrap.min.js"></script>
+			<script src="static/js/bootstrap-hover-dropdown.min.js"></script>
+			<script src="static/js/owl.carousel.js"></script>
+			<script src="static/js/modernizr.custom.js"></script>
+			<script src="static/js/jquery.stellar.js"></script>
+			<script src="static/js/jquery.validation.js"></script>
+			<script src="static/js/masonry.pkgd.min.js"></script>
+			<script src="static/js/jquery.pricefilter.js"></script>
+			<script src="static/js/jquery.bxslider.min.js"></script>
+			<script src="static/js/mediaelement-and-player.js"></script>
+			<script src="static/js/waypoints.min.js"></script>
+			<script src="static/js/jquery.spinner.min.js"></script>
+			<script src="static/js/bootbox.min.js"></script>
+			<script src="static/js/theme.plugins.js"></script>
+			<script src="static/js/theme.js"></script>
+			<script src="static/js/frontend-common.js"></script>
+			<script src="static/js/jquery.qrcode.min.js" type="text/javascript" charset="utf-8"></script>
+			<script src="static/js/myjs.js"></script>
+			<script src="static/js/utils.js"></script>
+			<script>
+
+                //退款请求参数
+                var refundParam={};
+				// 引入common的底部代码
+				$(document).ready(function() {
+					$(".foot").load("common/foot.html");
+					$(".top").load("common/top.html", function() {
+						$('#category').mouseover(function() {
+							$('#dropdown_div').fadeIn()
+						})
+						$('#category').mouseleave(function() {
+							$('#dropdown_div').hide()
+						})
+						$('#dropdown_div').mouseover(function() {
+							$(this).show()
+						})
+						$('#dropdown_div').mouseleave(function() {
+							$(this).hide()
+						})
+					});
+
+				});
+
+				function closeTip() {
+                    $('#tip_text').html('')
+                    $('#refundModal').hide()
+                    $('#modal2').hide()
+                    $('.modal-backdrop').hide()
+                    $('#tipModel').hide()
+                    window.location.reload();
+
+                }
+                function exitModel() {
+                    $('#modal2').hide()
+                    $('#tipModel').hide()
+                    $('.modal-backdrop').hide()
+                }
+                function refundHide() {
+                    this.refundParam={};
+                    $('#refundModal').hide()
+                    $('#tipModel').hide()
+                }
+                function payReload() {
+                    $('#modal2').hide()
+                    $('.modal-backdrop').hide()
+                    $('#tipModel').hide()
+                    window.location.reload();
+                }
+                //定时刷新支付结果
+                function queryPayResult(outTradeNo) {
+                    let param={
+                        outTradeNo: outTradeNo
+                    }
+                    $.ajax({
+                        //请求方式
+                        type: "post",
+                        //请求的媒体类型
+                        contentType: "application/json;charset=UTF-8",
+                        //请求地址
+                        url: baseUrl + "/api/aliPay/tradeQuery",
+                        //数据，json字符串
+                        data: JSON.stringify(param),
+                        //请求成功
+                        success: function (resp) {
+                            if(resp=="success"){
+                                $('#modal2').hide()
+                                $('.modal-backdrop').hide()
+                                $('#text').html('支付成功')
+                                window.location.reload();
+                            }
+                        },
+                        error: function (e) {
+                        }})
+
+                }
+
+                /**
+				 * 支付
+				 * */
+                function toPay(index){
+
+                    let payParam = {
+                        activedId: newResult[index].actived.id,
+                        activedSessionId: newResult[index].activedSession.id,
+                        memberId: newResult[index].booking.memberId,
+                        bookingId: newResult[index].booking.id
+                    }
+                    //获取支付二维码
+                    $.ajax({
+                        //请求方式
+                        type: "post",
+                        //请求的媒体类型
+                        contentType: "application/json;charset=UTF-8",
+                        //请求地址
+                        url: baseUrl + "/api/aliPay/aliPayForPc",
+                        //数据，json字符串
+                        data: JSON.stringify(payParam),
+                        //请求成功
+                        success: function (resp) {
+                            if(resp.result=="success"){
+                                $('#code').each(function (i) {
+                                    var str = resp.qrCode;
+                                    //默认使用Canvas生成，并显示到图片
+                                    var qrcode = $(this).qrcode(str).hide();
+                                    var canvas = qrcode.find('canvas').get(0);
+                                    $(this).attr('src', canvas.toDataURL('image/jpg'))
+                                })
+                                $('#modal2').show()
+                                $('#text').html('<b>支付:</b><span style="font-size: 16px;padding: 2px 5px;margin: 0 3px;color: #fff;background: #f4b138;">'+newResult[index].actived.price*newResult[index].booking.bookingNum+'</span>元')
+                                $("#code").show()
+                                //定时刷新支付结果
+                                var timer = setInterval(function(){queryPayResult(resp.outTradeNo)}, 10000);
+                                $("#exitButton").click(function (e) {
+                                    //清除setInterval
+                                    clearInterval(timer);
+                                });
+                            }else{
+                                $('#modal2').show()
+                                $('#text').html('请求支付失败:'+resp.message)
+                                $('.modal-backdrop').hide()
+                                $('#text_code').hide()
+                                return false
+                            }
+                        },
+                        error: function (e) {
+                            $('#text_code').hide()
+                            $('#modal2').show()
+                            $('#text').html(e.responseJSON.message)
+                        }})
+
+                }
+
+                /**
+                 * 退款页面
+                 * */
+                function toRefund(index){
+                    this.refundParam={
+                        memberId: newResult[index].booking.memberId,
+                        activedId: newResult[index].actived.id,
+                        orderNum: newResult[index].booking.orderNum
+					}
+                    $('#refundModal').show()
+
+				}
+
+                /**
+				 *提交退款
+                 */
+                function submitRefund(){
+					if($.trim($("#refundReson").val())==''){
+                        $('#tips').html('退款原因不能为空')
+						return false;
+					}
+                    $('#tips').html('')
+                    this.refundParam.refundDesc=$.trim($("#refundReson").val());
+                    $.ajax({
+                        //请求方式
+                        type: "post",
+                        //请求的媒体类型
+                        contentType: "application/json;charset=UTF-8",
+                        //请求地址
+                        url: baseUrl + "/api/aliPay/refundForPc",
+                        //数据，json字符串
+                        data: JSON.stringify(this.refundParam),
+                        //请求成功
+                        success: function (resp) {
+                            if(resp=="退款成功"){
+                                $('#tip_text').html('退款成功')
+                                $('#tipModel').show()
+                                $('#refundModal').hide()
+                            }else{
+                                $('#refundModal').hide()
+                                $('#tip_text').html('请求退款结果:'+resp)
+                                $('#tipModel').show()
+                            }
+                        },
+                        error: function (e) {
+                            $('#refundModal').hide()
+                            $('#tip_text').html(e.responseJSON.message)
+                            $('#tipModel').show()
+					}})
+				}
+
+				function exit(index){
+				  let cal = {
+				    id: newResult[index].booking.id,
+				    activedSessionId: newResult[index].activedSession.id
+				  }
+				  $.ajax({
+				  	//请求方式
+				  	type: "post",
+				  	//请求的媒体类型
+				  	contentType: "application/json;charset=UTF-8",
+				  	//请求地址
+				  	url: baseUrl + "/api/mobile/cancel",
+				  	//数据，json字符串
+				  	data : JSON.stringify(cal),
+				  	//请求成功
+				  	success: function(result) {
+						alert('取消成功')
+						window.location.reload()
+					}
+					})
+				}
+				var newResult
+				$(function() {
+					//请求参数
+					// var list = {};
+					//
+					$.ajax({
+						//请求方式
+						type: "GET",
+						//请求的媒体类型
+						contentType: "application/json;charset=UTF-8",
+						//请求地址
+						url: baseUrl + "/member/travelMember/getApply?memberId=" + user.id,
+						//数据，json字符串
+						// data : JSON.stringify(list),
+						//请求成功
+						success: function(result) {
+							newResult = result
+							let name = ''
+							let  html = ''
+							let  html_exiq = ''
+							let html_pay=''
+							for (var i = 0; i < result.length; i++) {
+								if(result[i].booking.bookingStatus == 0){
+									name = '预约中'
+								}else if(result[i].booking.bookingStatus == 1){
+									name = '预约成功'
+								}else if(result[i].booking.bookingStatus == 2){
+									name = '预约失败'
+								}else{
+									name = '取消预约'
+								}
+								let sessionStartTime = new Date(result[i].activedSession.sessionStartTime).getTime()
+                                let sessionAutoEndTime = new Date(result[i].activedSession.autoEndTime).getTime()
+                                if(((result[i].booking.payPoint == 1 && !result[i].booking.price)|| (result[i].booking.payPoint == 0 && result[i].booking.price))&& (sessionStartTime -  new Date())  > 0 && !result[i].booking.joinStatus &&result[i].booking.bookingStatus!=3 &&result[i].booking.bookingStatus!=2){
+									html_exiq = `<button class="exit" onclick="exit('${i}')">取消预约</button>`
+								}else{
+									html_exiq = ``
+								}
+                               if(result[i].booking.payPoint == 0 &&result[i].booking.bookingStatus==0 && result[i].booking.price>0 && (sessionAutoEndTime -  new Date())  > 0 ){
+                                   html_pay = `<button class="pay" onclick="toPay('${i}')">支付${result[i].actived.price*result[i].booking.bookingNum}元<span class="countDownText" data-time="${result[i].booking.createTime}">${handelTime(result[i].booking.createTime)}</span></button>`;
+                                }else{
+                                     html_pay = ''
+							   }
+                                if(result[i].booking.payPoint == 1 &&result[i].booking.bookingStatus==1 && result[i].booking.price>0 && (sessionAutoEndTime -  new Date())  > 0 && !result[i].booking.joinStatus){
+                                    html_rund = `<button class="pay" onclick="toRefund('${i}')">退款</button>`;
+                                }else{
+                                    html_rund = ''
+                                }
+								// console.log(parseTime(result[i].startTime,"{y}/{m}/{d} {h}:{i}") - );
+								html +=
+								`<tr>
+								<td>${i+1}</td>
+										<td>${result[i].actived.activeName}</td>
+										<td>${result[i].booking.bookingNum}</td>
+										<td>${parseTime(result[i].activedSession.sessionStartTime,"{m}/{d} {h}:{i}")}-${parseTime(result[i].activedSession.sessionEndTime,"{m}/{d} {h}:{i}")}</td>
+										<td>${result[i].actived.autoType == 1 ? '预约' : result[i].actived.autoType == 2 ? '抽奖' : '免预约'}</td>
+										<td>${name}</td>
+										<td>${html_pay}${html_exiq}${html_rund}</td>
+										</tr>
+										`
+							}
+							$("tbody").html(html);
+							setTimeInterVal();
+						}
+                })
+                })
+
+                function handelTime(createTime){
+                    var time = new Date(createTime).getTime();
+                    var curTime = new Date().getTime();
+					var reduce = 1000 * 60 * 5;
+					var reduceTime = time + reduce - curTime;
+					if( reduceTime > 0){
+						var days = parseInt(reduceTime / 1000 / 60 / 60 / 24) < 10 ? '0' + parseInt(reduceTime / 1000 / 60 / 60 / 24) : parseInt(reduceTime / 1000 / 60 / 60 / 24);
+						var hours = parseInt(reduceTime / 1000 / 60 / 60 % 24, 10) < 10 ? '0' + parseInt(reduceTime / 1000 / 60 / 60 % 24, 10) : parseInt(reduceTime / 1000 / 60 / 60 % 24, 10);
+						var minutes = parseInt(reduceTime / 1000 / 60 % 60, 10) < 10 ? '0' + parseInt(reduceTime / 1000 / 60 % 60, 10) : parseInt(reduceTime / 1000 / 60 % 60, 10);
+						var seconds = parseInt(reduceTime / 1000 % 60, 10) < 10 ? '0' + parseInt(reduceTime / 1000 % 60, 10) : parseInt(reduceTime / 1000 % 60, 10);
+						var dayStr = days <= 0 ? '' : days + ':';
+						return ' 剩余'  + hours + ':' + minutes + ':' + seconds;
+					}else{
+						return '';
+					}
+				}
+
+				function setTimeInterVal(){
+					$.each($('.countDownText'), function(i,item){
+						(function (it, length) {
+							var timer = setInterval(function(){
+								var countDownText = handelTime($(it).attr('data-time'));
+								if(countDownText){
+									$(it).html(countDownText);
+								}else{
+									$(it).html('');
+									clearInterval(timer);
+								}
+							}, 1000);
+						})(item);
+					})
+				}
+
+			</script>
+			<!-- Piwik -->
+			<!-- <script type="text/javascript">
+				var _paq = _paq || [];
+				_paq.push(['trackPageView']);
+				_paq.push(['enableLinkTracking']);
+				(function() {
+					var u = "//logs.wenhuayouyue.com/logs/";
+					_paq.push(['setTrackerUrl', u + 'piwik.php']);
+					_paq.push(['setSiteId', '1']);
+					var d = document,
+						g = d.createElement('script'),
+						s = d.getElementsByTagName('script')[0];
+					g.type = 'text/javascript';
+					g.async = true;
+					g.defer = true;
+					g.src = u + 'piwik.js';
+					s.parentNode.insertBefore(g, s);
+				})();
+			</script>
+			<noscript>
+				<p><img src="static/picture/piwik-1.jpg" style="border:0;" alt=""></p>
+			</noscript> -->
+			<!-- End Piwik Code -->
+
+			<!-- JavaScript -->
+
+			<!-- <script src="static/js/activityList.js">
+				</script> -->
+
+	</body>
+</html>
+<style type="text/css">
+	.exit {
+		background-color: #F4B139;
+		color: #fff;
+		border: 0;
+		outline: none;
+		white-space: nowrap;
+	}
+
+	.pay {
+		background-color: #ee0a24;
+		color: #fff;
+		border: 0;
+		outline: none;
+		white-space: nowrap;
+		margin:5px 5px 5px 5px;
+	}
+
+
+	.countdown {
+		font-size: 1em;
+	}
+	input {
+		background: none;
+		outline: none;
+		border: 1px solid #ccc;
+	}
+
+	.add {
+		padding: 2px 5px;
+		background-color: #f1b236;
+		border: 1px solid #f1b236;
+		color: #fff;
+		float: right;
+		margin-top: -37px;
+		margin-right: 31px;
+		outline: none;
+	}
+
+	.reduce {
+		padding: 2px 5px;
+		background-color: #ed4014;
+		border: 1px solid #ed4014;
+		color: #fff;
+		float: right;
+		margin-top: -37px;
+		margin-right: -12px;
+		outline: none;
+	}
+
+	.add_all button {
+		padding: 2px 5px;
+		background-color: #f1b236;
+		border: 1px solid #f1b236;
+		color: #fff;
+		outline: none;
+	}
+
+	#id-comment-all h1 {
+		margin-bottom: 0;
+	}
+	#id-comment-all .all-list .item{
+		border-bottom: solid 1px #eee;
+		padding: 10px 15px;
+		position: relative;
+		font-size: 18px;
+		color: #333;
+	}
+	#id-comment-all .all-list .item .phone {
+		color: #999;
+	}
+	#id-comment-all .all-list .item .mid-rank-stars {
+		position: absolute;
+		right: 15px;
+		top: 15px;
+	}
+
+	#id-comment-all .all-list .item .comment-images {
+		clear: both;
+	}
+
+	#id-comment-all .all-list .item .comment-images .comment-img {
+		display: inline-block;
+		margin: 0 10px 10px 0;
+		width: 100px;
+		height: 100px;
+		object-fit: cover;
+	}
+
+	#addComment {
+		float: right;
+		color: #333;
+		padding-right: 20px;
+		font-size: 16px;
+		padding-top: 5px;
+		cursor: pointer;
+	}
+	#addComment:hover {
+		opacity: 0.8;
+	}
+	.comment-body .comment-body-item{
+		margin-bottom: 10px;
+	}
+	.comment-body .comment-body-item_label {
+		font-size: 13px;
+		margin-bottom: 5px;
+	}
+	.comment-body .comment-body-item_content {
+
+	}
+	#comment-content {
+		width: 100%;
+		height: 100px;
+	}
+	#comment-star {
+		display: inline-block;
+		float: left;
+	}
+	#comment-star img {
+		width: 20px;
+		height: 20px;
+	}
+
+	.file-preview .close {
+		display: none;
+	}
+</style>

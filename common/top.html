@@ -1,0 +1,1394 @@
+<div>
+    <div id="top">
+        <div class="container">
+            <p class="pull-left text-note">欢迎访问文化有约网站</p>
+
+            <ul class="nav nav-pills nav-top navbar-right">
+                <li class="my-account" id="li-welcome"><a href="/web/index.html" style="text-transform: none" title="">您好,
+						317035359</a></li>
+                <!-- menu-list dropdown data-toggle="dropdown class="dropdown-toggle""-->
+                <li class="my-account"><a href="#">嘉兴</a>
+                    <!-- <ul class="dropdown-menu" role="menu" style="background-color: #fff;">
+									<li><a>切换城市</a></li>
+								</ul> -->
+                </li>
+
+                <li class="dropdown menu-list"><a href="#" class="dropdown-toggle" data-toggle="dropdown">我的帐号<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu" style="background-color: #fff;" id="menu">
+                        <li><a href="/web/reservation.html" id="reservation">我的预约</a></li>
+                        <li><a href="/web/scoreinfo.html" id="scoreinfo">我的积分</a></li>
+                        <li><a href="/web/info.html" id="info">我的资料</a></li>
+                    </ul>
+                </li>
+
+                <li class="my-account" id="li-login"><a href="javascript:;" id="btn-login">登录</a></li>
+                <li class="my-account" id="li-register"><a href="javascript:;" id="btn-register">注册</a></li>
+                <li class="my-account" id="li-logout"><a href="javascript:;" onclick="quit()">退出</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="heard" style="height: 140px;background-color: #fff;">
+        <div class="container" style="height: 100%;">
+            <a class="logo" href="index.html" style="height: 100%;line-height: 100%;padding-top: 40px;">
+                <img src="static/picture/logo.png" alt="LOGO">
+            </a>
+            <!-- gif -->
+            <div class="visible-sm-block visible-md-block visible-lg-block" style="width: 200px;height: 85%;float: left;padding-top: 20px;">
+                <img style="width: 100%;height: 100%;" src="static/image/b7c0bf8c4afcb3d1ec44a9f40dd46340.gif">
+            </div>
+            <div id="input_div" class="visible-md-block visible-lg-block" style="width: 50%;min-width: 300px;height: 100%;float: left;padding-left: 20px;margin-left: 5%;padding-top: 20px;">
+                <div id="search_phone" style="height: 20px;width: 98%;text-align: right;padding-right: 15px;color: #f4b139;font-size: 13px;font-weight: bold;margin-top: 10px;">
+                    <img src="static/image/top_phone.png" style="width: 20px;height: 20px;vertical-align: text-bottom;">&nbsp;服务热线:
+                    <span>82876296</span>
+                </div>
+                <div id="input1" style="margin-top: 5px;width: 100%;height: 40px;position: relative;">
+                    <div id="category_d">
+                        <input type="hidden" value="" class="cur_search_category">
+                        <span class="category_d_s " style="text-align: left;line-height: 40px;font-size: 14px;">区域选择
+							<img src="static/image/jiantou2.png" width="12px">
+						</span>
+                        <div class="category_select_list">
+                            <ul id="area">
+                                <li style="color: #F4B139;">区域选择</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="search_input_right_d">
+                        <input id="search_input2" style="background-color: #fff;" type="text" name="search" placeholder="搜索关键字" autocomplete="off">
+                        <input id="search_btn" class="iconfont" type="submit" value="搜索 ">
+                        <span class="fa fa-search" style="position: absolute;right: 8px;top: 50%;transform: translateY(-50%);color: #fff;"></span>
+                    </div>
+                </div>
+                <!-- <ul style="margin-left: 5px;" id="type">
+				</ul> -->
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-default navbar-main" role="navigation" style="background-color: #ececec;min-height: 35px;height: 35px;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="margin-top: 10px;">
+					<span class="sr-only"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+				</button>
+                <!-- <a class="logo" href=""><img src="static/picture/logo.png" alt="LOGO"></a> -->
+                <div id="dropdown_div_wrap">
+                    <div id="category">
+                        活动场馆
+                    </div>
+					<!-- 这里是放一个按钮，然后让用户点击下拉显示 -->
+			<!--		<div id="dropdown_div_openlist" style="position: absolute; width: 210px; height: 35px; margin-top: 35px; background-color: #ECECEC;display: none;">
+						<button style=" width: 90px;height: 38px;  margin-left: 60px; background-image: url(static/image/drop-down.png); background-size: 100% 100%;background-color: #ECECEC; border: none; outline: none;" onclick="openlist()"></button>
+					</div>-->
+                    <div id="dropdown_div">
+                        <div id="dropdown_menu">
+                            <ul style="padding: 0;">
+                                <div class="top_menu">
+                                    <i class="fa fa-book" style="font-size: 26px;left: 5px;"></i>
+                                    <li>
+                                        <p class="tname">
+                                            图书馆
+                                        </p>
+                                        <p class="tsub_name">
+                                            展览 讲座 培训 主题活动
+                                        </p>
+                                    </li>
+                                    <i class="fa fa-angle-right" style="font-size: 26px;width: 15px;"></i>
+                                </div>
+                                <div class="top_menu">
+                                    <i class="iconfont icon-wenhuayule" style="font-size: 26px;left: 5px;width: 26px;height: 26px;"></i>
+                                    <li>
+                                        <p class="tname">
+                                            文化馆
+                                        </p>
+                                        <p class="tsub_name">
+                                            展览 讲座 培训 主题活动
+                                        </p>
+                                    </li>
+                                    <i class="fa fa-angle-right" style="font-size: 26px;width: 15px;"></i>
+                                </div>
+                                <div class="top_menu">
+                                    <i class="iconfont icon-bowuguan" style="font-size: 26px;left: 5px;"></i>
+                                    <li>
+                                        <p class="tname">
+                                            博物馆
+                                        </p>
+                                        <p class="tsub_name">
+                                            展览 讲座 培训 主题活动
+                                        </p>
+                                    </li>
+                                    <i class="fa fa-angle-right" style="font-size: 26px;width: 15px;"></i>
+                                </div>
+                                <div class="top_menu">
+                                    <i class="iconfont icon-meishuguan" style="font-size: 26px;left: 5px;"></i>
+                                    <li>
+                                        <p class="tname">
+                                            美术馆
+                                        </p>
+                                        <p class="tsub_name">
+                                            展览 讲座 培训 主题活动
+                                        </p>
+                                    </li>
+                                    <i class="fa fa-angle-right" style="font-size: 26px;width: 15px;"></i>
+                                </div>
+                                <div class="top_menu">
+                                    <i class="iconfont icon-kejiguan" style="font-size: 26px;left: 5px;"></i>
+                                    <li>
+                                        <p class="tname">
+                                            科技馆
+                                        </p>
+                                        <p class="tsub_name">
+                                            展览 讲座 培训 主题活动
+                                        </p>
+                                    </li>
+                                    <i class="fa fa-angle-right" style="font-size: 26px;width: 15px;"></i>
+                                </div>
+                                <div class="top_menu">
+                                    <i class="iconfont icon-gongren" style="font-size: 26px;left: 5px;"></i>
+                                    <li>
+                                        <p class="tname">
+                                            工人文化馆
+                                        </p>
+                                        <p class="tsub_name">
+                                            展览 讲座 培训 主题活动
+                                        </p>
+                                    </li>
+                                    <i class="fa fa-angle-right" style="font-size: 26px;width: 15px;"></i>
+                                </div>
+                                <div class="top_menu">
+                                    <i class="iconfont icon-qingshaonian" style="font-size: 26px;left: 5px;"></i>
+                                    <li>
+                                        <p class="tname">
+                                            青少年宫
+                                        </p>
+                                        <p class="tsub_name">
+                                            展览 讲座 培训 主题活动
+                                        </p>
+                                    </li>
+                                    <i class="fa fa-angle-right" style="font-size: 26px;width: 15px;"></i>
+                                </div>
+                                <div class="top_menu">
+                                    <i class="iconfont icon-funvbaojianke" style="font-size: 26px;left: 5px;"></i>
+                                    <li>
+                                        <p class="tname">
+                                            妇女儿童活动中心
+                                        </p>
+                                        <p class="tsub_name">
+                                            展览 讲座 培训 主题活动
+                                        </p>
+                                    </li>
+                                    <i class="fa fa-angle-right" style="font-size: 26px;width: 15px;"></i>
+                                </div>
+                                <!-- 这里是放一个按钮吧，然后让用户点击按钮上拉上去 -->
+                                 <div style="text-align: center;margin-top: 10px;">
+<!--                                	 //线下查看效果可以加web，线上需要去掉-->
+                                     <button style="width: 100px;height: 40px; background-image: url(static/picture/arrow-up-bold.png); background-size: 100% 100%;background-color: #ECECEC; outline: none;border: none;" onclick="cuttle()">
+                                	 </button>
+                                </div>
+                            </ul>
+                        </div>
+                        <div id="side_menu" class="hidden-xs hidden-sm">
+                            <div class="cat_info">
+                                <div class="cat_info_list">
+                                    <p>
+                                        <a href="">
+											图书馆
+										</a>
+                                    </p>
+                                    <ul style="padding-left: 0px;margin: 0 0 20px;" id="tag">
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div style="height: 300px;background-color: rgba(0,0,0,0)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-collapse collapse width">
+
+                <ul class="nav navbar-nav pull-left pull-right short-menu" style="background-color: #ececec;">
+                    <li class="dropdown">
+                        <img src="static/image/shouye-6.png" alt="" class="visible-md-block visible-lg-block" style="position: absolute;top: 5px;left: 22px;width: 20px;height: 20px;">
+                        <a href="index.html">首页</a></li>
+                    <li class="dropdown">
+                        <a href="screen.html?type=3">热门活动</a>
+                        <img src="static/image/hot.png" class="visible-md-block visible-lg-block" style="position: absolute;top: 5px;right: -15px;">
+                    </li>
+                    <li class="dropdown">
+                        <a href="screen.html?type=0">活动预告</a>
+                        <img src="static/image/new.png" class="visible-md-block visible-lg-block" style="position: absolute;top: 5px;right: -15px;">
+                    </li>
+                    <li class="dropdown"><a href="screen.html?type=1">正在进行</a>
+                    </li>
+                    <li style="width: 100px;text-align: left;" class="dropdown"><a style="padding: 0;" href="screen.html?type=2">往期活动</a></li>
+                    <!-- <li class="dropdown-sub"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> 移动端
+					<img class="new_menu_img" src="static/picture/new_menu.gif" alt="new">
+						</a>
+						<ul class="dropdown-menu" style="display: none;">
+							<li><a href="javascript:;">
+									<img width="100" height="100" src="./static/image/erweima.png">
+								</a> <a href="javascript:;" style="text-align: center;">扫码进入</a>
+							</li>
+							<li></li>
+						</ul>
+					</li> -->
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+        <!--/.container-fluid -->
+    </nav>
+    <div class="layui-layer layui-layer-page layer_login_div dialog_top" id="layui-layer1" type="page" times="1" showtime="0" contype="string" style="display: none;">
+        <div id="" class="layui-layer-content">
+            <div class="title">
+                <p class="t1">用户登录</p>
+            </div>
+            <a class="layer_close" id="layer_login_close" href="javascript:;"><img src="http://static.mp.cc/image/website/mobile/layer_close_img.png?imageslim"></a>
+            <div id="layer_login_div">
+                <div class="group" style="display: none;">
+                    <input id="layer_register_telphone_name" type="tel" placeholder="请输入您的真实姓名">
+                    <p class="note_register_telphone">您的隐私信息经过加密保护，用于线下核销</p>
+                </div>
+                <div class="group"> <input id="layer_register_telphone" type="tel" placeholder="请输入您的联系电话">
+                    <p class="note_register_telphone">您的隐私信息经过加密保护，用于线下核销</p>
+                </div>
+                <div class="code_cont"> <input id="layer_register_code" type="tel" placeholder="请输入短信验证码">
+                    <a id="layer_register_send_code" href="javascript:;" onclick="sendsms()">获取验证码</a>
+                </div>
+                <a class="tncode" style="opacity: 0;position: absolute;top:-100px;left:-2000px;">验证码</a>
+                <p class="note_register_telphone" id="rule" style="display: none;">请输入正确手机号</p>
+                <a href="javascript:;" id="layer_do_register">立即登录</a>
+                <div id="layer_register_note"></div>
+            </div>
+        </div><span class="layui-layer-setwin"></span><span class="layui-layer-resize"></span>
+    </div>
+    <!-- 注册弹窗 start -->
+    <div class="layui-layer layui-layer-page layer_login_div dialog_top" id="layui-layer-register" type="page" times="1" showtime="0" contype="string" style="display: none;">
+        <div id="" class="layui-layer-content">
+            <div class="title">
+                <p class="t1">用户注册</p>
+            </div>
+            <a class="layer_close" id="layer_register_close" href="javascript:;"><img src="http://static.mp.cc/image/website/mobile/layer_close_img.png?imageslim"></a>
+            <div id="layer_register_div">
+                <div class="group register-box">
+                    <div class="register-radio">
+                        <input type="radio" name="types" value="1" title="个人" checked />
+                        <span>个人</span>
+                    </div>
+                    <div class="register-radio">
+                        <input type="radio" name="types" value="2" title="团队" />
+                        <span>团队</span>
+                    </div>
+                </div>
+                <div class="group">
+                    <input class="input" id="register_nickName" type="text" placeholder="请输入团队账号名称">
+                </div>
+                <div class="group">
+                    <input class="input" id="register_phone" type="tel" placeholder="请输入登录手机号">
+                </div>
+                <div class="group">
+                    <input class="input" id="register_chargePerson" type="text" placeholder="请输入负责人真实姓名">
+                </div>
+                <div class="group">
+                    <input class="input" id="register_chargeNo" type="text" placeholder="请输入负责人身份证号">
+                    <div id="id_card_rule"></div>
+                </div>
+                <div class="group" style="position: relative;">
+                    <input class="input" id="layer_register_code_1" maxlength="6" type="tel" placeholder="请输入短信验证码">
+                    <a id="layer_register_send_code_1" href="javascript:;" onclick="sendsms('#register_phone', '#register_rule', '#layer_register_send_code_1')">获取验证码</a>
+                    <div id="register_rule"></div>
+                </div>
+                <div id="register-sub" onclick="doRegister()">
+                    立即注册
+                </div>
+            </div>
+
+        </div><span class="layui-layer-setwin"></span><span class="layui-layer-resize"></span>
+    </div>
+    <!-- 注册弹窗 end -->
+    <div class="bootbox modal fade bootbox-confirm in" id="modal4" tabindex="3" role="dialog" aria-hidden="false">
+        <div class="modal-dialog">
+            <div class="modal-content" style="border-radius: 0px;">
+                <div class="modal-body"><button type="button" class="bootbox-close-button close" data-dismiss="modal" aria-hidden="true" style="margin-top: -10px;" onclick="exit_true()">×</button>
+                    <div class="bootbox-body" style="text-align: center;margin: 50px 0;z-index: 999"></div>
+                </div>
+                <div class="modal-footer" style="text-align: center;border-top:0;">
+                    <button data-bb-handler="confirm" type="button" class="btn btn-primary" onclick="exit_true()" style="background-color: #f1b236;border: 1px solid #f1b236;">确认</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/web/static/js/utils.js" async></script>
+<script>
+    //截取url字符串
+    function getUrlCode() {
+        let url = window.location.search;
+        let theRequest = new Object();
+        if (url.indexOf('?') != -1) {
+            let str = url.substr(1);
+            let strs = str.split('&');
+            for (let i = 0; i < strs.length; i++) {
+                theRequest[strs[i].split('=')[0]] = strs[i].split('=')[1];
+            }
+        }
+        return theRequest;
+    }
+    //获取搜索值，然后在跳转后input框中同样保留显示
+    if (getUrlCode().key) {
+        $('#search_input2').val(decodeURI(getUrlCode().key))
+    }
+    // 把这个缓存set方法写在外部，在需要用的部分调用
+    function setUser(obj) {
+        window.localStorage['user'] = JSON.stringify(obj);
+    }
+    // 把这个缓存get方法写在外部，在需要用的部分调用
+    function getUser() {
+        var obj = window.localStorage['user'];
+        if (obj) {
+            return JSON.parse(obj);
+        } else {
+            return null
+        }
+    }
+    //清除缓存中的这个user字段
+    function removeUser() {
+        window.localStorage.clear('user');
+    }
+    //退出，清除缓存
+    function quit() {
+        removeUser()
+        window.location.href = '/web/index.html'
+    }
+    //点击确定后，弹窗消失，刷新页面
+    function exit_true() {
+        $('#modal4').fadeOut()
+        let dialogId = ''
+        switch (type) {
+            case 1:
+                dialogId = 'layui-layer1'
+                break
+            case 2:
+                dialogId = 'layui-layer-register'
+                break
+            case 3:
+                dialogId = ''
+                window.location.reload()
+                break
+        }
+        if (dialogId) {
+            $('#' + dialogId).show()
+        }
+
+    }
+    var type = 0 //1代表点击的登录2代表注册0未点击
+    var address = ''
+
+    function cuttle() {
+        $('#dropdown_div').fadeOut()
+    	$('#dropdown_div_openlist').fadeIn()
+    }
+    function openlist() {
+    	$('#dropdown_div').fadeIn()
+    	$('#dropdown_div_openlist').fadeOut()
+    }
+    $('#category').mouseover(function() {
+            $('#dropdown_div').fadeIn()
+        })
+        //在非主页的时候会把活动场馆那条菜单选项栏隐藏，当在上面进行移入或移出的时候把这个菜单显示或隐藏
+    $('#category_d').mouseover(function() {
+        $('.category_select_list').show()
+    })
+    $('#category_d').mouseleave(function() {
+        $('.category_select_list').hide()
+        $('#side_menu .cat_info').hide()
+    })
+    $('#dropdown_menu').on("mouseover", ".top_menu", function(e) {
+        let html = ''
+        let newhtml = $(this).find('.tname').html()
+        $('#side_menu').show()
+        $('#side_menu p').html(newhtml)
+        $('#side_menu .cat_info').show()
+        address = newhtml
+        for (let i = 0; i < newArr.length; i++) {
+            html = ''
+            if (newhtml.trim() == newArr[i].name) {
+                for (let j = 0; j < newArr[i].obj.length; j++) {
+                    html += `<li>
+					<a href="screen.html?activeType=${newArr[i].obj[j].activeType}" onclick="addScreen(this)">
+					${newArr[i].obj[j].activeType}
+					</a>
+				</li>`
+                }
+                $('#tag').html(html)
+            }
+        }
+    })
+    $('#dropdown_menu').on("mouseleave", ".top_menu", function(e) {
+        $('#side_menu').hide()
+        $('#side_menu .cat_info').hide()
+    })
+    $('#side_menu').mouseover(function() {
+        $('#side_menu').show()
+        $('#side_menu .cat_info').show()
+    })
+    $('#side_menu').mouseleave(function() {
+        $('#side_menu').hide()
+        $('#side_menu .cat_info').hide()
+    })
+    $('#search_btn').click(function() {
+        let key = $('#search_input2').val()
+        window.location.href = '/web/screen.html?key=' + key
+    })
+    $('#search_input2').bind('keypress', function(event) {
+        if (event.keyCode == "13") {
+            $("#search_btn").trigger("click");
+        }
+    })
+    var newArr = []
+    $.ajax({
+        //请求方式
+        type: "GET",
+        //请求的媒体类型
+        contentType: "application/json;charset=UTF-8",
+        //请求地址
+        url: baseUrl + "/pc/venueClassify",
+        //数据，json字符串
+        // data : ,
+        //请求成功
+        success: function(result) {
+            for (x in result) {
+                newArr.push({
+                    name: x,
+                    obj: result[x]
+                })
+            }
+        }
+    }).then(function() {
+        $("#dropdown_menu .tsub_name").each(function(index, ele) {
+            let html = ''
+            for (let i = 0; i < newArr.length; i++) {
+                html = ''
+                if (newArr[i].name == $(ele).prev('.tname').html().trim()) {
+                    //如果两个相同的情况下再去循环里面的obj对象
+                    if (newArr[i].obj.length != 0) {
+                        for (let j = 0; j < newArr[i].obj.length && j < 4; j++) {
+                            //截取前四个进行放置到页面上先
+                            html += `<a  href="screen.html?activeType=${newArr[i].obj[j].activeType}" onclick="addScreen(this)">${newArr[i].obj[j].activeType}</a>&nbsp;`
+                        }
+                    } else {
+                        html += `<span style="text-align: center;color:#b9b9b9;">暂无活动</span>`
+                    }
+
+                    $(ele).html(html)
+                }
+            }
+        });
+    })
+
+    $.ajax({
+        //请求方式
+        type: "GET",
+        //请求的媒体类型
+        contentType: "application/json;charset=UTF-8",
+        //请求地址
+        url: baseUrl + "/pc/dictDetail?sort=dictSort%2Casc&sort=id%2Cdesc&dictName=sys_area",
+        //数据，json字符串
+        // data : ,
+        //请求成功
+        success: function(result) {
+            let html = ''
+            for (var i = 0; i < result.content.length; i++) {
+                html +=
+                    `<li>
+							<a href="screen.html?area=${result.content[i].itemText}">
+							${result.content[i].itemText}
+							</a>
+							</li>`
+            }
+            $('#area').append(html)
+        }
+    })
+
+    function addScreen(that) {
+        let old = $(that).attr('href')
+        if (old.indexOf('address=') == -1) {
+            $(that).attr('href', old + '&address=' + address)
+        } else {
+            old.split('&')
+            let newurl = old[0]
+            $(that).attr('href', newurl + '&address=' + address)
+        }
+    }
+    //登录
+    function doLogin() {
+
+        let smsVerifyCode = $("#layer_register_code").val();
+        if (!smsVerifyCode) {
+            $('#rule').html('请输入正确验证码')
+            return false;
+        }
+        let data = {
+            phone: $("#layer_register_telphone").val(),
+            code: smsVerifyCode
+        };
+        $.ajax({
+            //请求方式
+            type: "POST",
+            //请求的媒体类型
+            contentType: "application/json;charset=UTF-8",
+            dataType: "json",
+            //请求地址
+            url: baseUrl + "/member/travelMember/doLogin",
+            //数据，json字符串
+            data: JSON.stringify(data),
+            //请求成功
+            success: function(result) {
+                if (result.success == false) {
+                    $('.bootbox-body').html(result.message)
+                    $('#modal4').fadeIn(100)
+                    $('#modal4').find('.bootbox-body').html()
+                } else {
+                    type = 3
+                    let ert = {
+                        id: result.id
+                    }
+                    $.ajax({
+                        //请求方式
+                        type: "POST",
+                        //请求的媒体类型
+                        contentType: "application/json;charset=UTF-8",
+                        dataType: "json",
+                        //请求地址
+                        url: baseUrl + "/member/travelMember/getMember",
+                        //数据，json字符串
+                        data: JSON.stringify(ert),
+                        success: function(result) {
+
+                        }
+                    })
+                    setUser(result)
+                    // $('.bootbox-body').html('登录成功')
+                    window.location.reload()
+                    $('#modal4').fadeIn(100)
+                    $('#modal4').find('.bootbox-body').html()
+                }
+            },
+            //请求失败，包含具体的错误信息
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+
+            }
+        });
+
+    }
+    $('#btn-login').click(function() {
+        $('.layui-layer-content>.title>.t1').html('用户登录')
+        $('#layer_register_telphone_name').parent('.group').hide()
+        $('#layer_do_register').html('立即登录')
+        type = 1
+        $('#layui-layer1').fadeIn()
+    })
+    //点击了top顶部的注册
+    $('#btn-register').click(function() {
+
+        // $('.layui-layer-content>.title>.t1').html('用户注册')
+        // $('#layer_register_telphone_name').parent('.group').show()
+        // $('#layer_do_register').html('立即注册')
+        // type = 2
+        type = 2
+        $('#layui-layer-register').fadeIn()
+    })
+    $('#menu').click(function() {
+        $('.layui-layer-content>.title>.t1').html('用户登录')
+        $('#layer_register_telphone_name').parent('.group').hide()
+        type = 1
+    })
+
+    //点击了立即登录
+    $('#layer_do_register').click(function() {
+        if (type == 1) {
+            $('#layui-layer1').hide()
+            doLogin()
+        } else if (type == 2) {
+            $('#layui-layer1').hide()
+            doRegister()
+        }
+    })
+    $('#layer_login_close').click(function() {
+        $('#layui-layer1').hide()
+    })
+    $('#layer_register_close').click(function() {
+        $('#layui-layer-register').hide()
+    })
+    var teamKey = [
+        'register_nickName',
+        'register_chargePerson',
+        'register_chargeNo'
+    ]
+    var checkTypes = 1
+    for(var i = 0; i < teamKey.length; i++) {
+        $('#' + teamKey[i]).hide()
+    }
+    $('.register-radio input[name="types"]').change(function (e) {
+        checkTypes = Number($(this).val())
+        for(var i = 0; i < teamKey.length; i++) {
+            $('#' + teamKey[i])[checkTypes === 1 ? 'hide': 'show']()
+        }
+    })
+    //注册登录
+    function doRegister() {
+        if (checkTypes==2){
+            let idCard = $("#register_chargeNo").val()
+            if (!isIdCard(idCard)) {
+                $('#id_card_rule').html('请输入正确的身份证号码')
+                return
+            } else {
+                $('#id_card_rule').html('')
+            }
+        }
+        let smsVerifyCode = $(type === 1 ? "#layer_register_code": "#layer_register_code_1").val();
+        if (!smsVerifyCode) {
+            $(type === 1 ? '#rule': '#register_rule').html('请输入正确验证码')
+            return false;
+        }
+        let data = {}
+        let dialogId = ''
+        switch (checkTypes) {
+            case 1:
+                // dialogId = 'layui-layer1'
+                data = {
+                    phone: $("#register_phone").val(),
+                    code: smsVerifyCode,
+                    // name: $('#layer_register_telphone_name').val()
+                };
+                break
+            case 2:
+                let idCard = $("#register_chargeNo").val()
+                // dialogId = 'layui-layer-register'
+                data = {
+                    types: checkTypes,
+                    phone: $("#register_phone").val(),
+                    nickname: $("#register_nickName").val(),
+                    chargePerson: $("#register_chargePerson").val(),
+                    chargeNo: idCard,
+                    code: smsVerifyCode
+                };
+                break
+        }
+        $.ajax({
+            //请求方式
+            type: "POST",
+            //请求的媒体类型
+            contentType: "application/json;charset=UTF-8",
+            dataType: "json",
+            //请求地址
+            url: baseUrl + "/member/travelMember/create",
+            //数据，json字符串
+            data: JSON.stringify(data),
+            //请求成功
+            success: function(result) {
+                if (result.success == false) {
+                    $('#' + dialogId).hide()
+                    $('.bootbox-body').html(result.message)
+                    $('#modal4').fadeIn(100)
+                    $('#modal4').find('.bootbox-body').html()
+                } else {
+                    $('#' + dialogId).hide()
+                    setUser(result)
+                    type = 3
+                    // $('.bootbox-body').html('注册登录成功')
+                    window.location.reload()
+                    $('#modal4').fadeIn(100)
+                    $('#modal4').find('.bootbox-body').html()
+                }
+
+            },
+            //请求失败，包含具体的错误信息
+            error: function(e) {
+                if (e.responseJSON.status == 400) {
+                    $('#modal4').fadeIn(100)
+                    $('#modal4').find('.bootbox-body').html(e.responseJSON.message)
+                }
+            }
+        });
+
+    }
+{//TODO点击事件
+    let isClick=true;//是否可点击
+    let numClick=0; //点击数
+    function sendsms(id = '', ruleId = '', btnId) {
+        numClick++;
+        if(isClick){
+            let timeout=null;
+            var mobile = $(id || "#layer_register_telphone").val();//获取手机表单值
+            var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;
+            if (!mobile) {
+                $(ruleId || '#rule').show()
+                $(ruleId || '#rule').html('请输入手机号')
+            return false;
+            } else if (mobile.length != 11) {
+                $(ruleId || '#rule').show()
+                $(ruleId || '#rule').html('请输入正确的手机号')
+            return false;
+            } else if (!myreg.test(mobile)) {
+                $(ruleId || '#rule').show()
+                $(ruleId || '#rule').html('请输入有效的手机号')
+            return false;
+            } else {
+                isClick=false;
+                $(ruleId || '#rule').hide()
+                $(btnId || "#layer_register_telphone").attr('disabled', true)
+                clearTimeout(timeout);
+                timeout =setTimeout(function(){
+                    isClick=true;
+                },60000);
+                sendSMSBtnStatus(mobile,btnId);
+            }
+        }else{
+            if(numClick>2){
+                alert("点击太频繁啦！！！！");
+                numClick=0;
+                return;
+            }
+        }
+
+    }
+}
+    function sendSMSBtnStatus(phone,btnId) {
+        var data = {
+            phone: phone
+        };
+        $.ajax({
+            //请求方式
+            type: "POST",
+            //请求的媒体类型
+            contentType: "application/json;charset=UTF-8",
+            dataType: "json",
+            //请求地址
+            url: baseUrl + "/api/mobile/sendCode",
+            //数据，json字符串
+            data: JSON.stringify(data),
+            //请求成功
+            success: function(result) {  // TODO发送频繁
+                /*if (!result.success){
+                  alert('验证码发送频繁，请一小时后再试！');
+                  numsuccess=0;
+                    return;
+                }*/
+                var step = 60;
+                var _res = setInterval(function() {
+                    
+                    if(btnId!=undefined){
+                        $("#layer_register_send_code_1").attr("disabled", true).css("pointer-events", 'none'); // 设置pointer-events属性
+                        $('#layer_register_send_code_1').text(step + '秒后重新发送');
+                        --step;
+                        if (step <= 0) {
+                            $("#register_phone").attr('disabled', false)
+                            $("#layer_register_send_code_1").attr("disabled", false).css("pointer-events", 'auto'); // 移除pointer-events属性
+                            $('#layer_register_send_code_1').text('重新获取');
+                            clearInterval(_res); // 清除setInterval
+                        }
+                    }else {
+                        $("#layer_register_send_code").attr("disabled", true).css("pointer-events","none"); // 设置pointer-events属性
+                        $("#layer_register_send_code").text(step + '秒后重新发送');
+                        --step;
+                        if (step <= 0) {
+                            $("#layer_register_telphone").attr('disabled', false)
+                            $("#layer_register_send_code").attr("disabled", false).css("pointer-events", 'auto'); // 移除pointer-events属性
+                            $('#layer_register_send_code').text('重新获取');
+                            clearInterval(_res); // 清除setInterval
+                        }
+                    }
+                }, 1000);
+            },
+            //请求失败，包含具体的错误信息
+            error: function(e) {
+                $('#layer_register_send_code').text('发送失败，重新获取');
+            }
+        });
+    }
+
+    let user = getUser()
+    if (user) {
+        $('#li-welcome>a').html(`您好,${user.name?user.name:user.phone}`)
+        $("#li-register").hide()
+        $("#li-login").hide()
+    } else {
+        type = 1
+        $('#reservation').attr('href', 'javascript:;')
+        $('#scoreinfo').attr('href', 'javascript:;')
+        $('#info').attr('href', 'javascript:;')
+        $("#reservation").click(function() {
+            $('.layui-layer-content>.title>.t1').html('用户登录')
+            $('#layui-layer1').show()
+        })
+        $("#scoreinfo").click(function() {
+            $('.layui-layer-content>.title>.t1').html('用户登录')
+            $('#layui-layer1').show()
+        })
+        $("#info").click(function() {
+            $('.layui-layer-content>.title>.t1').html('用户登录')
+            $('#layui-layer1').show()
+        })
+        $('#li-welcome>a').hide()
+        $("#li-register").show()
+        $("#li-login").show()
+        $('#li-logout').hide()
+    }
+</script>
+<style type="text/css">
+    .dialog_top {
+        font-size: 14px;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+        color: #4C4C4C;
+        -webkit-font-smoothing: antialiased;
+        position: fixed;
+        pointer-events: auto;
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+        box-shadow: 1px 1px 50px rgba(0, 0, 0, .3);
+        border: none;
+        border-radius: 10px;
+        background-clip: padding-box;
+        overflow: hidden;
+        z-index: 19891015;
+        width: 530px;
+        top: 185.5px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .layui-layer-content {
+        font-size: 14px;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+        color: #4C4C4C;
+        -webkit-font-smoothing: antialiased;
+        pointer-events: auto;
+        margin: 0;
+        position: relative;
+        overflow: auto;
+        padding: 0 0 30px;
+    }
+
+    .layui-layer-setwin {
+        font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+        color: #4C4C4C;
+        -webkit-font-smoothing: antialiased;
+        pointer-events: auto;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        font-size: 0;
+        line-height: initial;
+        pointer-events: auto;
+    }
+
+    .layui-layer-resize {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        right: 0;
+        bottom: 0;
+        cursor: se-resize;
+        pointer-events: auto;
+    }
+
+    .layui-layer-content .title {
+        font-size: 14px;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+        color: #4C4C4C;
+        -webkit-font-smoothing: antialiased;
+        pointer-events: auto;
+        padding: 0;
+        margin: 0;
+        height: 56px;
+        background-color: #efefef;
+        text-align: center;
+    }
+
+    .layui-layer-content .title .t1 {
+        font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        pointer-events: auto;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 56px;
+        color: #333;
+    }
+
+    .layer_close {
+        font-size: 14px;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        pointer-events: auto;
+        padding: 0;
+        margin: 0;
+        color: #4C4C4C;
+        text-decoration: none;
+        outline: none;
+        position: absolute;
+        top: 11px;
+        right: 21px;
+    }
+
+    .layer_close img {
+        font-size: 14px;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        pointer-events: auto;
+        color: #4C4C4C;
+        padding: 0;
+        margin: 0;
+        border: none;
+        width: 35px;
+    }
+
+    #layer_login_div {
+        font-size: 14px;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+        color: #4C4C4C;
+        -webkit-font-smoothing: antialiased;
+        pointer-events: auto;
+        margin: 0;
+        position: relative;
+        padding: 0 60px;
+    }
+
+    #layer_register_telphone_name {
+        background-color: #fff !important;
+        border-radius: 48px;
+        background-clip: padding-box;
+        height: 48px;
+        width: 100%;
+        border: 1px solid #dcdcdc;
+        margin-top: 15px;
+        text-align: left;
+        background-image: url(static/image/name.png);
+        background-repeat: no-repeat;
+        background-position: 24px center;
+        background-size: 16px;
+        text-indent: 55px;
+    }
+
+    #layer_register_telphone {
+        background-color: #fff !important;
+        border-radius: 48px;
+        background-clip: padding-box;
+        height: 48px;
+        width: 100%;
+        border: 1px solid #dcdcdc;
+        margin-top: 15px;
+        text-align: left;
+        background-image: url(static/image/login-phone.png);
+        background-repeat: no-repeat;
+        background-position: 24px center;
+        background-size: 16px;
+        text-indent: 55px;
+    }
+
+    input {
+        outline: none;
+    }
+
+    .note_register_telphone {
+        /* position: absolute; */
+        /* bottom: -18px; */
+        font-size: 12px;
+        color: #da0000;
+        text-indent: 40px;
+        margin: 0;
+        background-image: url(static/image/a-red.png);
+        background-repeat: no-repeat;
+        background-position: 25px center;
+    }
+
+    #layer_login_div .code_cont {
+        margin-top: 2px;
+        height: 48px;
+        width: 100%;
+        border-radius: 48px;
+        background-clip: padding-box;
+        border: 1px solid #dbdbdb;
+        overflow: hidden;
+    }
+
+    #layer_register_code {
+        background-color: #fff;
+        width: 59%;
+        height: 100%;
+        display: inline-block;
+        border: none;
+        text-align: left;
+        background-repeat: no-repeat;
+        background-position: 24px center;
+        background-size: 11px;
+        text-indent: 55px;
+        background-image: url(static/image/login-key.png);
+    }
+
+    #layer_login_div .code_cont #layer_register_send_code,
+    #layer_register_div #layer_register_send_code_1 {
+        width: 41%;
+        height: 100%;
+        line-height: 48px;
+        text-align: center;
+        float: right;
+        border: none;
+        background-color: #ff9600;
+        color: #fff;
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    #layer_login_div #layer_do_register {
+        width: 100%;
+        height: 48px;
+        line-height: 48px;
+        background-color: #da0000;
+        color: #fff;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 14px;
+        border-radius: 48px;
+        background-clip: padding-box;
+        letter-spacing: 1px;
+        display: block;
+        border: 1px solid #dcdcdc;
+    }
+
+    .category_select_list {
+        border: 1px solid #f4b139;
+        background-color: #fff;
+        position: absolute;
+        width: 356%;
+        left: -1px;
+        top: 38px;
+        padding: 10px 0;
+        border-top: 0;
+        z-index: 20;
+        display: none;
+    }
+
+    #input_div ul {
+        margin-left: 5px;
+    }
+
+    .category_select_list li {
+        width: 67px;
+        height: 24px;
+        line-height: 24px;
+        margin-left: 6px;
+        float: left;
+        text-align: center;
+        transition: all 0.3s;
+        font-size: 13px;
+        cursor: pointer;
+        margin-top: 10px;
+        margin-right: 5px;
+    }
+
+    #category_d {
+        float: left;
+        width: 24%;
+        height: 40px;
+        text-align: left;
+        padding-left: 33px;
+        line-height: 40px;
+        font-size: 14px;
+        cursor: pointer;
+        position: relative;
+        border: 1px solid #f4b139;
+        border-right: none;
+        border-bottom-left-radius: 20px;
+        border-top-left-radius: 20px;
+        background-clip: padding-box;
+        box-sizing: border-box;
+    }
+
+    #input1 #category_d:hover {
+        border-bottom-left-radius: 0;
+        background-clip: padding-box;
+    }
+
+    #search_input_right_d {
+        border-bottom-right-radius: 20px;
+        border-top-right-radius: 20px;
+        background-clip: padding-box;
+        border: 1px solid #f4b139;
+        border-left: none;
+        height: 100%;
+        width: 76%;
+        float: left;
+        box-sizing: border-box;
+    }
+
+    #search_input_right_d #search_input2 {
+        height: 24px;
+        margin-top: 8px;
+        border: none;
+        width: 80%;
+        float: left;
+        text-indent: 10px;
+        padding-left: 5px;
+        font-size: 13px;
+    }
+
+    #search_input_right_d #search_btn {
+        float: right;
+        width: 20%;
+        height: 39px;
+        background: #f4b139;
+        border: none;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        border-top-right-radius: 18px;
+        border-bottom-right-radius: 18px;
+        background-clip: padding-box;
+    }
+
+    .navbar-main .navbar-collapse .navbar-nav>li {
+        width: 130px;
+        text-align: center;
+        font-size: 16px;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+    }
+
+    .navbar-main .navbar-collapse .navbar-nav>li a {
+        text-decoration: none;
+        font-weight: bold;
+        display: block;
+        font-size: 15px;
+        background-repeat: no-repeat;
+        background-position: 29px 8px;
+        position: relative;
+    }
+
+    .navbar-main .navbar-collapse .navbar-nav>li a:hover {
+        color: #f4b139;
+    }
+
+    #category {
+        background: #f4b139;
+        width: 210px;
+        height: 35px;
+        line-height: 35px;
+        float: left;
+        text-align: center;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+
+    #dropdown_div {
+        position: absolute;
+        top: 35px;
+        height: 450px;
+        z-index: 999;
+        display: none;
+    }
+
+    #dropdown_div #dropdown_menu {
+        width: 210px;
+        height: 490px;
+        float: left;
+        background: #ececec;
+        z-index: 9999;
+    }
+
+    #dropdown_div #dropdown_menu ul {
+        width: 100%;
+        display: inline-block;
+        margin-top: 6px;
+    }
+
+    #dropdown_div #dropdown_menu ul div {
+        color: #3f3d3e;
+        text-decoration: none;
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: 12px 10px;
+    }
+
+    .top_menu_1 {
+        /* background-image: */
+    }
+
+    #dropdown_div #dropdown_menu ul div li {
+        height: 54px;
+        padding-top: 3px;
+        width: 170px;
+        margin-left: 20px;
+        font-size: 13px;
+        letter-spacing: 1px;
+        border-bottom: 1px solid #dadada;
+        padding-bottom: 0;
+    }
+
+    #dropdown_div #dropdown_menu ul div li p.tname {
+        font-weight: bold;
+        text-indent: 20px;
+        font-size: 14px;
+        margin: 0;
+    }
+
+    #dropdown_div #dropdown_menu ul div li p.tsub_name {
+        margin-top: 6px;
+        text-indent: 20px;
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+
+    #dropdown_div #dropdown_menu ul div .fa,
+    #dropdown_div #dropdown_menu ul div .iconfont {
+        position: absolute;
+        top: 10px;
+        right: 2px;
+        font-size: 26px;
+        color: #b0b0b0;
+        height: 26px;
+    }
+
+    #dropdown_div #side_menu {
+        width: 600px;
+        height: 465px;
+        margin-top: 6px;
+        border-left: none;
+        float: left;
+        display: none;
+        z-index: 9999;
+    }
+
+    #dropdown_div #side_menu .cat_info {
+        background: white;
+        height: 165px;
+        padding: 15px 20px;
+        display: none;
+    }
+
+    #dropdown_div #side_menu .cat_info .cat_info_list {
+        padding-top: 10px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 10px;
+    }
+
+    #dropdown_div #side_menu .cat_info .cat_info_list p {
+        font-weight: bold;
+        margin-bottom: 6px;
+    }
+
+    #dropdown_div #side_menu .cat_info .cat_info_list p a {
+        cursor: pointer;
+        padding: 0;
+    }
+
+    #tag a:hover {
+        color: #F4B139;
+    }
+
+    #dropdown_div #side_menu .cat_info .cat_info_list ul {
+        width: 100%;
+    }
+
+    #dropdown_div #side_menu .cat_info .cat_info_list ul li {
+        float: left;
+        height: 27px;
+        white-space: nowrap;
+        display: inline-block;
+    }
+
+    #dropdown_div #side_menu .cat_info .cat_info_list ul li a {
+        display: inline-block;
+        padding: 4px 3px;
+        font-size: 12px;
+    }
+
+    .clear {
+        clear: both;
+    }
+
+    #dropdown_menu .tsub_name a {
+        font-size: 12px;
+        cursor: pointer;
+    }
+
+    #dropdown_menu .tsub_name a:hover {
+        color: #F4B139;
+    }
+
+    #area a:hover {
+        color: #F4B139;
+    }
+
+    /* 注册 */
+    #layer_register_div {
+        width: 90%;
+        margin: 0 auto;
+    }
+    #layer_register_div .register-box{
+        font-size: 16px;
+        padding-top: 10px;
+        text-align: center;
+    }
+    #layer_register_div .register-box .register-radio {
+        display: inline-block;
+        margin-right: 10px;
+    }
+    #layer_register_div .register-box .register-radio input {
+        transform: scale(1.5);
+    }
+    #layer_register_div .input {
+        background-color: #fff !important;
+        border-radius: 48px;
+        background-clip: padding-box;
+        height: 48px;
+        width: 100%;
+        border: 1px solid #dcdcdc;
+        margin-top: 15px;
+        text-align: left;
+        /* background-image: url(static/image/login-phone.png);
+        background-repeat: no-repeat;
+        background-position: 24px center; */
+        background-size: 16px;
+        text-indent: 20px;
+    }
+    #layer_register_div #layer_register_send_code_1 {
+        position: absolute;
+        height: 48px;
+        line-height: 48px;
+        border-radius: 0 24px 24px 0;
+        top: 15px;
+        right: 0;
+    }
+    #register-sub {
+        width: 100%;
+        height: 48px;
+        line-height: 48px;
+        background-color: #da0000;
+        color: #fff;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 14px;
+        border-radius: 48px;
+        background-clip: padding-box;
+        letter-spacing: 1px;
+        display: block;
+        border: 1px solid #dcdcdc;
+        cursor: pointer;
+    }
+    #register-sub:hover {
+        opacity: 0.8;
+    }
+</style>

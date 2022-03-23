@@ -1,0 +1,110 @@
+
+  <div class="footer">
+  	<div class="container">
+  		<div class="upper-foot">
+  			<div class="row">
+  				<div class="col-xs-3 col-sm-3">
+  					<h2>关注文化有约</h2>
+  					<ul class="list-unstyled">
+  						<!-- <li><i class="fa fa-weibo"> </i> <a target="_blank" href="javascript:;">新浪微博</a></li> -->
+  						<li><i class="fa fa-wechat"> </i> 微信公众号</li>
+  						<li><img style="height: 100px; width: 100px" alt="二维码" src="static/picture/wechat.jpg"></li>
+  					</ul>
+  				</div>
+  				<div class="col-xs-3 col-sm-3">
+  					<h2>联系我们</h2>
+  					<address>
+  						<i class="fa fa-archive"></i> “文化有约”项目管理办公室 <br>
+						<i class="fa fa-clock-o"></i>时间：9:30—12:00; 14:30—17:00
+						<br>
+  						<i class="fa fa-phone"></i>联系电话：82876296
+  						<br> <i class="fa fa-envelope"></i> <a href="mailto:#">jxwhyy2013@163.com</a>
+  						<br> <i class="fa fa-qq"></i>
+  						QQ:2507546335
+  
+  					</address>
+  				</div>
+  				<div class="col-xs-3 col-sm-3">
+  					<h2>管理办法</h2>
+  					<ul class="list-unstyled">
+  						<li><a target="_blank" href="agreement.html">《“文化有约”用户协议》</a></li>
+  						<li></li>
+  						<li><a target="_blank" href="score.html">《“文化有约”用户积分管理暂行办法》</a></li>
+  					</ul>
+  				</div>
+  				<div class="col-xs-3 col-sm-3">
+  					<h2><a href="javascript:;" title="查看网站访问统计数据">今日访问量 <i class="fa fa-bar-chart-o"></i>
+  						</a></h2>
+  					<ul class="list-unstyled">
+  						<li>
+  							<div id="odometer_today" class="counter">
+  								</div>
+  						</li>
+  					</ul>
+  					<h2><a href="javascript:;" title="查看网站访问统计数据">累计访问量 <i class="fa fa-bar-chart-o"></i>
+  						</a></h2>
+  					<ul class="list-unstyled">
+  						<li>
+  							<div id="odometer_total" class="counter">
+  								</div>
+  						</li>
+  					</ul>
+  				</div>
+  			</div>
+  		</div>
+  		<div class="below-foot">
+  			<div class="row">
+  				<div class="col-xs-6 copyrights">
+  					<p>
+  											Copyright © 2020 whgdlyj3.jiaxing.gov.cn 技术支持 <a href="mailto:support@wenhuayouyue.com">support@wenhuayouyue.com</a><br>
+  											All rights reserverd by 嘉兴晒而智能科技有限公司. <a href="http://beian.miit.gov.cn">浙ICP备14038789号-1</a>
+  										</p>
+  				</div>
+  				<div class="col-xs-6 text-right">
+  					<i class="fa fa-book"></i><a href="http://beian.miit.gov.cn">浙ICP备14038789号-1</a>
+  				</div>
+  			</div>
+  		</div>
+  		
+  	</div>
+  </div>
+<script>
+	$(function() {
+		//在一定时间内只获取一次  这个接口是较大接口 所以过滤掉用户不停刷新的这么一个过程。
+		let time = new Date
+		/* if(window.sessionStorage.getItem('time')){
+			let oldTime = window.sessionStorage.getItem('time')
+			//一分钟之内60*1000
+			if(time - oldTime < 60000 ){
+				//如果在一分钟之内，把放sessionStorage的人数字段直接拿出来放dom上，不走接口。
+				let visitor = window.sessionStorage.getItem('visitor')
+				let lastDayVisitor = window.sessionStorage.getItem('lastDayVisitor')
+				$('#odometer_today').html(lastDayVisitor)
+				$('#odometer_total').html(Number(visitor)+12336773)
+				return false
+			}
+		} */
+		window.sessionStorage.setItem('time',time.getTime())
+		//请求
+		$.ajax({
+			//请求方式
+			type: "GET",
+			//请求的媒体类型
+			contentType: "application/json;charset=UTF-8",
+			//请求地址
+			url: baseUrl + "/pc/hot/visitor",
+			//数据，json字符串
+			// data : JSON.stringify(list),
+			//请求成功
+			success: function(result) {
+				let visitor = result.visitor+result.visitorH5
+				//把人数字段放到sessionStorage中，注：sessionStorage的生命周期在浏览器关闭时关闭
+				// window.sessionStorage.setItem('visitor',result.visitor)
+				let lastDayVisitor = result.lastDayVisitor+result.visitorH5Visitor
+				// window.sessionStorage.setItem('lastDayVisitor',result.lastDayVisitor)
+				$('#odometer_today').html(lastDayVisitor)
+				$('#odometer_total').html(visitor+12336773)
+			}
+		})
+	})
+</script>

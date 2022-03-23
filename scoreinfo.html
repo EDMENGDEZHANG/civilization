@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+
+
+	<head>
+		<title> 文化有约-文化休闲何处去，公益场馆零距离。 </title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="renderer" content="webkit">
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="keywords" content="文化有约,公共文化服务，文化产业，文化产品">
+		<meta name="author" content="文化有约网站">
+		<meta name="description" content="文化休闲何处去，公益场馆零距离 ">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="./static/image/favicon.ico" />
+
+		<!-- Bootstrap -->
+		<link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Icon Fonts -->
+		<link href="static/css/font-awesome.css" rel="stylesheet">
+
+		<!-- Owl Carousel Assets -->
+		<link href="static/css/owl.carousel.css" rel="stylesheet">
+		<link href="static/css/owl.theme.css" rel="stylesheet">
+		<link href="static/css/owl.transitions.css" rel="stylesheet">
+
+		<!-- Theme -->
+		<link href="static/css/theme-responsive.css" rel="stylesheet">
+		<link href="static/css/theme-animate.css" rel="stylesheet">
+		<link href="static/css/theme-elements.css" rel="stylesheet">
+		<link href="static/css/theme-blog.css" rel="stylesheet">
+		<link href="static/css/theme-shop.css" rel="stylesheet">
+		<link href="static/css/theme.css" rel="stylesheet">
+
+		<link href="static/css/frontend-common.css" rel="stylesheet">
+		<link href="static/css/style.css" rel="stylesheet">
+
+		<!-- Visit Counter -->
+		<link href="static/css/odometer-theme-car.css" rel="stylesheet">
+
+	</head>
+	<body>
+<div id="page">
+
+<header>
+	<div class="top" style=""></div>
+</header>
+
+
+
+		<!-- Begin Main -->
+		<div class="page-404">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						
+	<!-- MAIN CONTENT -->
+	<div id="content">
+		<div class="row">
+			<div>
+				<div>
+					<header>
+						<h3>我的积分</h3>
+					</header>
+					<div>
+						<div>
+							当前积分: <b>101</b>
+						</div>
+						<!-- widget content -->
+						<div>
+							<table id="dt_basic" class="table table-striped table-bordered table-hover">
+								<thead>
+									<tr>
+										<th>序号</th>
+										<th>时间</th>
+										<th>手机</th>
+										<th>说明</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+						<!-- <div class="my-bottom">
+							<div class="my-bottom">
+								推荐新用户注册有<b class="customInfo">积分奖励</b>哦，赶快推荐文化有约给朋友吧。推荐方法，复制下面的链接发送给朋友:
+							</div>
+							<div>
+								<span class="recommend-info">http://www.wenhuayouyue.com/user/register?r=aibcdffcejf</span>
+							</div>
+						</div> -->
+						<div class="v-margin-20">
+							<span>注：关于文化有约系统的积分规则请参考：<a href="/web/score.html" target="_blank">《“文化有约”用户积分管理暂行办法》</a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END MAIN CONTENT -->
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="foot" style=""></div>
+	<script src="static/js/jquery.min.js"></script>
+			<script src="static/js/bootstrap.min.js"></script>
+			<script src="static/js/bootstrap-hover-dropdown.min.js"></script>
+			<script src="static/js/owl.carousel.js"></script>
+			<script src="static/js/modernizr.custom.js"></script>
+			<script src="static/js/jquery.stellar.js"></script>
+			<script src="static/js/jquery.validation.js"></script>
+			<script src="static/js/masonry.pkgd.min.js"></script>
+			<script src="static/js/jquery.pricefilter.js"></script>
+			<script src="static/js/jquery.bxslider.min.js"></script>
+			<script src="static/js/mediaelement-and-player.js"></script>
+			<script src="static/js/waypoints.min.js"></script>
+			<script src="static/js/jquery.spinner.min.js"></script>
+			<script src="static/js/bootbox.min.js"></script>
+			<script src="static/js/theme.plugins.js"></script>
+			<script src="static/js/theme.js"></script>
+			<script src="static/js/frontend-common.js"></script>
+			<script src="static/js/myjs.js"></script>
+			<script src="static/js/utils.js"></script>
+			<script>
+				// 引入common的底部代码
+				$(document).ready(function() {
+					$(".foot").load("common/foot.html");
+					$(".top").load("common/top.html", function() {
+						$('#category').mouseover(function() {
+							$('#dropdown_div').fadeIn()
+						})
+						$('#category').mouseleave(function() {
+							$('#dropdown_div').hide()
+						})
+						$('#dropdown_div').mouseover(function() {
+							$(this).show()
+						})
+						$('#dropdown_div').mouseleave(function() {
+							$(this).hide()
+						})
+					});
+				});
+				var id = user.id
+				$.ajax({
+					//请求方式
+					type: "GET",
+					//请求的媒体类型
+					contentType: "application/json;charset=UTF-8",
+					//请求地址
+					url: baseUrl + "/pc/member?id=" + id,
+					//数据，json字符串
+					// data : JSON.stringify(list),
+					//请求成功
+					success: function(result) {
+						let html = 
+						`<tr>
+											<td>1</td>
+											<td>${parseTime(result.createTime,"{y}/{m}/{d} {h}:{i}")}</td>
+											<td>${result.phone}</td>
+											<td>积分: ${result.integral}</td>
+										</tr>`
+										$('tbody').html(html)
+										$('.row b').html(`${result.integral}`)
+					}
+					})
+			</script>
+			<!-- Piwik -->
+			<!-- <script type="text/javascript">
+				var _paq = _paq || [];
+				_paq.push(['trackPageView']);
+				_paq.push(['enableLinkTracking']);
+				(function() {
+					var u = "//logs.wenhuayouyue.com/logs/";
+					_paq.push(['setTrackerUrl', u + 'piwik.php']);
+					_paq.push(['setSiteId', '1']);
+					var d = document,
+						g = d.createElement('script'),
+						s = d.getElementsByTagName('script')[0];
+					g.type = 'text/javascript';
+					g.async = true;
+					g.defer = true;
+					g.src = u + 'piwik.js';
+					s.parentNode.insertBefore(g, s);
+				})();
+			</script>
+			<noscript>
+				<p><img src="static/picture/piwik-1.jpg" style="border:0;" alt=""></p>
+			</noscript> -->
+			<!-- End Piwik Code -->
+	
+			<!-- JavaScript -->
+	
+			<!-- <script src="static/js/activityList.js">
+			</script> -->
+	
+		</body>
+	</html>
+	

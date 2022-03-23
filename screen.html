@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html>
+<title> 文化有约-文化休闲何处去，公益场馆零距离。 </title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="文化有约,公共文化服务，文化产业，文化产品">
+<meta name="author" content="文化有约网站">
+<meta name="description" content="文化休闲何处去，公益场馆零距离 ">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="./static/image/favicon.ico" />
+<!-- Bootstrap -->
+<link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Icon Fonts -->
+<link href="static/css/font-awesome.css" rel="stylesheet">
+
+<!-- Owl Carousel Assets -->
+<link href="static/css/owl.carousel.css" rel="stylesheet">
+<link href="static/css/owl.theme.css" rel="stylesheet">
+<link href="static/css/owl.transitions.css" rel="stylesheet">
+
+<!-- Theme -->
+<link href="static/css/theme-responsive.css" rel="stylesheet">
+<link href="static/css/theme-animate.css" rel="stylesheet">
+<link href="static/css/theme-elements.css" rel="stylesheet">
+<link href="static/css/theme-blog.css" rel="stylesheet">
+<link href="static/css/theme-shop.css" rel="stylesheet">
+<link href="static/css/theme.css" rel="stylesheet">
+
+<link href="static/css/frontend-common.css" rel="stylesheet">
+<link href="static/css/style.css" rel="stylesheet">
+
+<!-- Visit Counter -->
+<link href="static/css/odometer-theme-car.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="static/font_ali/iconfont.css" />
+<link rel="stylesheet" href="static/css/swiper.min.css">
+<link rel="stylesheet" href="static/css/page.css">
+<link rel="stylesheet" href="static/css/animate.min.css">
+<link rel="stylesheet" href="static/css/myloading.css">
+
+
+<body style="background-color: #f4f4f4;">
+    <div id="page">
+        <header>
+            <div class="top"></div>
+        </header>
+        <div role="main" class="main wow animate__slideInUp" data-wow-duration="0.3s" data-wow-delay="0.3s" style="width: 100%;background-color: #fff;padding-top: 15px;">
+            <div class="bread_content">
+                <style>
+                    #bread {
+                        list-style: none;
+                        padding: 11px 0;
+                        position: relative;
+                    }
+
+                    #bread li {
+                        display: inline-block;
+                        *display: inline;
+                        *zoom: 1;
+                        font-size: 13px;
+                    }
+
+                    .navigation_right {
+                        position: absolute;
+                        right: 10px;
+                    }
+                </style>
+                <!-- <div class="content">
+						<ul id="bread">
+							<li style="margin-left:30px;">您当前的位置：</li>
+							<li><a href="/">首页></a></li>
+							<li>&gt;</li>
+							<li>活动筛选</li>
+						</ul>
+					</div> -->
+            </div>
+            <div id="list_search" class="filter-container w1200  show-all" style="padding-left: 30px;">
+                <div class="sort-subject">
+                    <div class="left_border"></div>
+                    <span class="sort_header">全部活动</span>
+                    <div class="search-type">
+                        <div class="ss-sort-tag ss_list" data-filter_key="sys_tag" onclick="exit_key(this)" style="display: none;">
+                        </div>
+                        <div class="ss-sort-type ss_list" data-filter_key="type" onclick="exit_key(this)" style="display: none;">
+                        </div>
+                        <div class="ss-sort-active ss_list" data-filter_key="sys_activity_type" onclick="exit_key(this)" style="display: none;">
+                        </div>
+                        <div class="ss-sort-address ss_list" data-filter_key="label" onclick="exit_key(this)" style="display: none;">
+                        </div>
+                        <div class="ss-sort-area ss_list" data-filter_key="sys_area" onclick="exit_key(this)" style="display: none;">
+                        </div>
+                        <div class="ss_list del-all" style="background: #FFE6D4;" onclick="exit_all(this)">
+                            <span>筛选重置</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="search_detail">
+                    <div class="filter type">
+                        <span class="tm_type_Type left_span">
+								开展状态：
+							</span>
+                        <ul class="type_huodong filter-right" data-type="type">
+                            <li class="detail selected" data-value="全部" data-value-active="4" onclick="pick(this)">
+                                全部
+                            </li>
+                            <li class="detail" data-value="热门活动" data-value-active="3" onclick="pick(this)">
+                                热门活动
+                            </li>
+                            <li class="detail" data-value="活动预告" data-value-active="0" onclick="pick(this)">
+                                活动预告
+                            </li>
+                            <li class="detail" data-value="正在进行" data-value-active="1" onclick="pick(this)">
+                                正在进行
+                            </li>
+                            <li class="detail" data-value="往期活动" data-value-active="2" onclick="pick(this)">
+                                往期活动
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="filter type">
+                        <span class="tm_type_activity left_span">
+								活动类型：
+							</span>
+                        <ul class="activity_type filter-right" data-type="sys_activity_type">
+                            <li class="detail selected" data-value="" onclick="pick(this)">
+                                全部
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="filter type">
+                        <span class="tm_type_tag left_span">
+								类别标签：
+							</span>
+                        <ul class="type_tag filter-right" data-type="sys_tag">
+                            <li class="detail selected" data-value="" onclick="pick(this)">
+                                全部
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="filter type">
+                        <span class="tm_type_Label left_span">
+								活动场馆：
+							</span>
+                        <ul class="Label filter-right" data-type="label">
+                            <li class="detail selected" data-value="" onclick="pick(this)">
+                                全部
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="filter type">
+                        <span class="tm_type_area left_span">
+								区域选择：
+							</span>
+                        <ul class="area filter-right" data-type="sys_area">
+                            <li class="detail selected" data-value="" onclick="pick(this)">
+                                全部
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info">
+            <section class="latest-blog">
+                <div style="margin:50px 0 20px 0;width: 100%;height: 40px;padding-right: 160px;">
+                    <div style="float: right;">
+                        <button class="detail selected-btn" onclick="allSort(this)" style="outline:none;border-radius: 5px;">综合排序</button>
+                        <button class="detail" onclick="perporSort(this)" style="outline:none;border-radius: 5px;">
+								人气
+								<i class="fa fa-arrow-up" id="up" style="display: none; outline:none"></i>
+								<i class="fa fa-arrow-down" style="outline:none" id="down"></i>
+							</button>
+                    </div>
+                </div>
+                <div class="container" style="width: 100%;margin-top: 20px;">
+                    <div class="row" id="row_info_list" style="width: 100%;padding: 30px;">
+                    </div>
+                    <div class="fenlei">
+                        暂无该分类活动
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div style="text-align: center;">
+            <div class="pageTest" style="display: inline-block;"></div>
+        </div>
+    </div>
+    <div class="foot"></div>
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/bootstrap-hover-dropdown.min.js"></script>
+    <script src="static/js/owl.carousel.js"></script>
+    <script src="static/js/modernizr.custom.js"></script>
+    <script src="static/js/jquery.stellar.js"></script>
+    <script src="static/js/jquery.validation.js"></script>
+    <script src="static/js/masonry.pkgd.min.js"></script>
+    <script src="static/js/jquery.pricefilter.js"></script>
+    <script src="static/js/jquery.bxslider.min.js"></script>
+    <script src="static/js/mediaelement-and-player.js"></script>
+    <script src="static/js/waypoints.min.js"></script>
+    <script src="static/js/jquery.spinner.min.js"></script>
+    <script src="static/js/bootbox.min.js"></script>
+    <script src="static/js/theme.plugins.js"></script>
+    <script src="static/js/theme.js"></script>
+    <script src="static/js/frontend-common.js"></script>
+    <script src="static/js/myjs.js"></script>
+    <script src="static/js/utils.js"></script>
+    <script src="static/js/swiper.min.js"></script>
+    <script src="static/js/page.js"></script>
+    <script src="static/js/wow.min.js"></script>
+    <script src="static/js/myloading.js"></script>
+    <script type="text/javascript">
+        new WOW().init();
+        $(document).ready(function() {
+            $(".foot").load("common/foot.html");
+            $(".top").load("common/top.html", function() {
+                $('#category').mouseover(function() {
+                    $('#dropdown_div').fadeIn()
+                })
+                $('#category').mouseleave(function() {
+                    $('#dropdown_div').hide()
+                })
+                $('#dropdown_div').mouseover(function() {
+                    $(this).show()
+                })
+                $('#dropdown_div').mouseleave(function() {
+                    $(this).hide()
+                })
+            });
+        });
+        var area = '' //地区
+        var address = '' //八大馆
+        var activeType = '' //场地的东西
+        var type = '' //热门活动等标签
+        var qurey = {
+            page: 1, //分页
+            size: 8, //数量
+            sys_area: '',
+            sys_activity_type: '', //活动类型
+            sys_tag: '',
+            activedName: '',
+            type: 4,
+            label: '',
+            sort: '' //排序0升序1降序
+        }
+        var sortType = 0
+        var total = 0
+            //综合
+        function allSort(that) {
+            qurey.sort = ''
+            getList(qurey)
+            $(that).addClass('selected-btn')
+            if ($(that).siblings('button').hasClass('selected-btn')) {
+                $(that).siblings('button').removeClass('selected-btn')
+            }
+        }
+        //人气
+        function perporSort(that) {
+            $(that).addClass('selected-btn')
+            if ($(that).siblings('button').hasClass('selected-btn')) {
+                $(that).siblings('button').removeClass('selected-btn')
+            }
+            if (sortType) {
+                sortType = 0
+                qurey.sort = 0
+                $('#up').hide()
+                $('#down').show()
+            } else {
+                $('#down').hide()
+                $('#up').show()
+                sortType = 1
+                qurey.sort = 1
+            }
+            getList(qurey)
+        }
+
+        function decodeUnicode(str) {
+            str = str.replace(/\\/g, "%");
+            return unescape(str);
+        }
+        if (getUrlCode().area) {
+            qurey.sys_area = decodeURI(getUrlCode().area)
+        } else {
+            qurey.sys_area = ''
+        }
+        if (getUrlCode().activeType) {
+            qurey.sys_activity_type = decodeURI(getUrlCode().activeType)
+        } else {
+            qurey.sys_activity_type = ''
+        }
+        if (getUrlCode().address) {
+            qurey.label = decodeURI(getUrlCode().address)
+            qurey.label = qurey.label.trim()
+        } else {
+            qurey.label = ''
+        }
+        if (getUrlCode().type) {
+            qurey.type = decodeURI(getUrlCode().type)
+        } else {
+            qurey.type = '4'
+        }
+        if (getUrlCode().key) {
+            qurey.activedName = decodeURI(getUrlCode().key)
+                //qurey.activeName = decodeURI(getUrlCode().key)
+        } else {
+            qurey.activedName = ''
+        }
+        if (getUrlCode().tag) {
+            qurey.sys_tag = decodeURI(getUrlCode().tag)
+        } else {
+            qurey.sys_tag = ''
+        }
+
+        function getUrlCode() {
+            let url = window.location.search;
+            let theRequest = new Object();
+            if (url.indexOf('?') != -1) {
+                let str = url.substr(1);
+                let strs = str.split('&');
+                for (let i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split('=')[0]] = strs[i].split('=')[1];
+                }
+            }
+            return theRequest;
+        }
+        getInfo(qurey)
+
+        $('.pageTest').page({
+            leng: Math.ceil(total / qurey.size), //分页总数
+            activeClass: 'activP', //active 类样式定义
+            clickBack: function(page) {
+                qurey.page = page
+                getList(qurey)
+            }
+        })
+
+        function getInfo(data) {
+            $.ajax({
+                //请求方式
+                type: "GET",
+                //请求的媒体类型
+                contentType: "application/json;charset=UTF-8",
+                //请求地址
+                url: baseUrl + "/pc/getHome",
+                //数据，json字符串
+                data: data,
+                //请求成功
+                success: function(result) {
+                    let Labelhtml = ''
+                    let sys_areahtml = ''
+                    let sys_activity_typehtml = ''
+                    let sys_taghtml = ''
+                        //类型
+                    for (let i = 0; i < result.Label.length; i++) {
+                        Labelhtml +=
+                            // `
+                            // <li class="detail" data-value="${result.Label[i].label}" onclick="pick(this)">
+                            // ${result.Label[i].label}
+                            // </li>
+                            // 	`
+                            `
+							<li class="detail" data-value="${result.Label[i].itemValue}" onclick="pick(this)">
+							${result.Label[i].itemValue}
+							</li>
+								`
+                    }
+                    $('.Label').append(Labelhtml)
+                        //地区
+
+
+
+                    for (let i = 0; i < result.areaList.length; i++) {
+                        console.log("地区"+result.areaList[i].itemValue)
+                        sys_areahtml +=
+                            `
+							<li class="detail" data-value="${result.areaList[i].itemValue}" onclick="pick(this)">
+							${result.areaList[i].itemValue}
+							</li>
+								`
+                    }
+                    console.log(sys_areahtml)
+                    $('.area').append(sys_areahtml)
+                        //主办方
+                    for (let i = 0; i < result.activedTypeList.length; i++) {
+                        sys_activity_typehtml +=
+                            `
+							<li class="detail" data-value="${result.activedTypeList[i].itemValue}" onclick="pick(this)">
+							${result.activedTypeList[i].itemValue}
+							</li>
+								`
+                    }
+                    $('.activity_type').append(sys_activity_typehtml)
+                    for (let i = 0; i < result.tagList.length; i++) {
+                        sys_taghtml +=
+                            `
+							<li class="detail" data-value="${result.tagList[i].itemValue}" onclick="pick(this)">
+							${result.tagList[i].itemValue}
+							</li>
+								`
+                    }
+                    $('.type_tag').append(sys_taghtml)
+                    getList(qurey)
+                }
+            })
+        }
+
+        function getList(data) {
+            var loading1 = $('#row_info_list').myloading('show');
+            $.ajax({
+                //请求方式
+                type: "GET",
+                //请求的媒体类型
+                contentType: "application/json;charset=UTF-8",
+                //请求地址
+                url: baseUrl + "/pc/getHome",
+                //数据，json字符串
+                data: data,
+                //请求成功
+                success: function(result) {
+                    if (qurey.type == '2') {
+                        window.sessionStorage.setItem('type', 1)
+                    } else if (qurey.type == '1') {
+                        window.sessionStorage.setItem('type', 2)
+                    } else if (qurey.type == '0') {
+                        window.sessionStorage.setItem('type', 3)
+                    } else {
+                        window.sessionStorage.setItem('type', 0)
+                    }
+                    //在这里判断qurey.type去操作缓存中的东西，然后去进行和移动端一样的类型场次区分的操作。
+                    if (total != result.content.totalElements) {
+                        total = result.content.totalElements
+                        $('.pageTest').setLength(Math.ceil(total / qurey.size))
+                    }
+                    if (total == 0) {
+                        total = 1
+                    }
+                    if (result.content.content.length == 0) {
+                        $('.container>.fenlei').show()
+                    } else {
+                        $('.container>.fenlei').hide()
+                    }
+                    let html = ''
+                    for (let i = 0; i < result.content.content.length; i++) {
+                        html +=
+                            `
+							<div class="col-xs-6 col-sm-3 col-md-3 wow animate__slideInUp" onclick="window.location.href = '/web/detail.html?a=${result.content.content[i].id}&type=${result.content.content[i].autoType}'" data-wow-duration="0.3s" data-wow-delay="0.3s">
+									<div class="whzg_active_item">
+<!--										<img style="height:200px;" class="active_img" src="${"https://whgdlyj3.jiaxing.gov.cn//sys/common/static/"+result.content.content[i].pic}">-->
+											<img style="object-fit:cover;width:100%;height:100%" src="${result.content.content[i].pic.indexOf("https")!==0?"https://whgdlyj3.jiaxing.gov.cn//sys/common/static/"+result.content.content[i].pic:result.content.content[i].pic}">
+										<div class="active_content">
+											<div class="active_title">${result.content.content[i].activeName}</div>
+											<div class="active_add" style="float:left;">
+											<span>
+												${result.content.content[i].activeType}
+												</span>
+											</div>
+											<div class="active_reserve text-right" style="height:48px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;word-break: break-all;">
+												<span class="number">${result.content.content[i].browse}</span>人浏览
+											</div>
+										</div>
+										<div class="active_tag">
+											<span class="tag2">${result.content.content[i].teamTag ==1?'团体':result.content.content[i].autoType==1 ? '预约' :result.content.content[i].autoType==2?'抽奖': '免预约'}</span>
+
+										</div>
+
+									</div>
+								</div>
+							`
+                    }
+                    $('#row_info_list').html(html)
+                }
+            }).then(function() {
+                loading1.myloading('hide');
+                $(".Label .detail").each(function(index, ele) {
+                    $(ele).removeClass("selected")
+                    if (qurey.label == $(ele).attr('data-value')) {
+                        if ($(ele).hasClass("selected")) {} else {
+                            $(ele).addClass("selected")
+                        }
+                    } else {
+                        $(ele).removeClass("selected")
+                    }
+                });
+                $(".area .detail").each(function(index, ele) {
+                    $(ele).removeClass("selected")
+                    if (qurey.sys_area == $(ele).attr('data-value')) {
+                        if ($(ele).hasClass("selected")) {} else {
+                            $(ele).addClass("selected")
+                        }
+                    } else {
+                        $(ele).removeClass("selected")
+                    }
+                });
+                $(".activity_type .detail").each(function(index, ele) {
+                    $(ele).removeClass("selected")
+                    if (qurey.sys_activity_type == $(ele).attr('data-value')) {
+                        if ($(ele).hasClass("selected")) {} else {
+                            $(ele).addClass("selected")
+                        }
+                    } else {
+                        $(ele).removeClass("selected")
+                    }
+                });
+                $(".type_huodong .detail").each(function(index, ele) {
+                    $(ele).removeClass("selected")
+                    if (qurey.type == $(ele).attr('data-value-active')) {
+                        if ($(ele).hasClass("selected")) {} else {
+                            $(ele).addClass("selected")
+                        }
+                    } else {
+                        $(ele).removeClass("selected")
+                    }
+                });
+                $(".type_tag .detail").each(function(index, ele) {
+                    $(ele).removeClass("selected")
+                    if (qurey.sys_tag == $(ele).attr('data-value')) {
+                        if ($(ele).hasClass("selected")) {} else {
+                            $(ele).addClass("selected")
+                        }
+                    } else {
+                        $(ele).removeClass("selected")
+                    }
+                });
+                if (qurey.label) {
+                    let a = $('.tm_type_Label').html()
+                    let Label = `
+						<span class="">${a}${qurey.label}</span>
+						<span class="search_icon_close">x</span>`
+                    $('.ss-sort-address').show()
+                    $('.ss-sort-address').html(Label)
+                } else {
+                    $('.ss-sort-address').html('')
+                    $('.ss-sort-address').hide()
+                }
+                if (qurey.type != 4) {
+                    let active_type = ''
+                    $(".type_huodong .detail").each(function(index, ele) {
+                        if (qurey.type == $(ele).attr('data-value-active')) {
+                            active_type = $(ele).html().trim()
+                        } else {
+                            active_type = ''
+                        }
+                        if (active_type) {
+                            let b = $('.tm_type_Type').html()
+                            let Type =
+                                `
+								<span class="">${b}${active_type}</span>
+								<span class="search_icon_close">x</span>
+								`
+                            $('.ss-sort-type').show()
+                            $('.ss-sort-type').html(Type)
+                        }
+                    });
+                } else {
+                    $('.ss-sort-type').html('')
+                    $('.ss-sort-type').hide()
+                }
+                if (qurey.label) {
+                    let a = $('.tm_type_Label').html()
+                    let Label =
+                        `<div class="ss-sort ss_list" data-filter_key="type">
+						<span class="">${a}：${qurey.label}</span>
+						<span class="search_icon_close">x</span>
+					</div>`
+                }
+                if (qurey.sys_activity_type) {
+                    let c = $('.tm_type_activity').html()
+                    let activity_type =
+                        `
+						<span class="">${c}${qurey.sys_activity_type}</span>
+						<span class="search_icon_close">x</span>`
+                    $('.ss-sort-active').show()
+                    $('.ss-sort-active').html(activity_type)
+                } else {
+                    $('.ss-sort-active').html('')
+                    $('.ss-sort-active').hide()
+                }
+                if (qurey.sys_area) {
+                    let d = $('.tm_type_area').html()
+                    let area =
+                        `
+						<span class="">${d}${qurey.sys_area}</span>
+						<span class="search_icon_close">x</span>
+						`
+                    $('.ss-sort-area').show()
+                    $('.ss-sort-area').html(area)
+                } else {
+                    $('.ss-sort-area').html('')
+                    $('.ss-sort-area').hide()
+                }
+                if (qurey.sys_tag) {
+                    let e = $('.tm_type_tag').html()
+                    let tag = `
+						<span class="">${e}${qurey.sys_tag}</span>
+						<span class="search_icon_close">x</span>`
+                    $('.ss-sort-tag').show()
+                    $('.ss-sort-tag').html(tag)
+                } else {
+                    $('.ss-sort-tag').html('')
+                    $('.ss-sort-tag').hide()
+                }
+            })
+        }
+        //点击
+        function pick(that) {
+            let objkey = $(that).parent().attr('data-type')
+            if (objkey != 'type') {
+                if ($(that).html().trim() != '全部') {
+                    qurey[objkey] = $(that).html().trim()
+                } else {
+                    qurey[objkey] = ''
+                }
+            } else {
+                if ($(that).html().trim() != '全部') {
+                    qurey.type = $(that).attr('data-value-active')
+                } else {
+                    qurey.type = '4'
+                }
+            }
+            qurey.page = 1
+            getList(qurey)
+        }
+        //点击删除
+        function exit_key(that) {
+            let objkey = $(that).attr('data-filter_key')
+			if(objkey == 'type'){
+				qurey.type = 4
+			}else{
+				qurey[objkey] = ''
+			}
+            qurey.page = 1
+            getList(qurey)
+        }
+        //重置搜索
+        function exit_all(that) {
+            qurey.sys_tag = ''
+            qurey.type = '4'
+            qurey.sys_activity_type = ''
+            qurey.label = ''
+            qurey.sys_area = '' //其他几个属性的重置
+            qurey.page = 1 //分页的重置
+            getList(qurey)
+        }
+    </script>
+</body>
+
+</html>
+<style type="text/css">
+    .pageTest {
+        height: 50px;
+        margin-top: 70px;
+    }
+
+    .activP {
+        background-color: #eeb135 !important;
+        color: #fff !important;
+    }
+
+    ul {
+        margin: 0;
+    }
+
+    .bread_content {
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    .content {
+        width: 100%;
+        height: auto;
+        background-color: #fff;
+        padding-top: 15px;
+    }
+
+    #bread {
+        border-bottom: 1px dashed #CCCCCC;
+        list-style: none;
+        padding: 11px 0;
+        position: relative;
+    }
+
+    #bread li {
+        display: inline-block;
+        font-size: 13px;
+    }
+
+    .navigation_right {
+        position: absolute;
+        right: 10px;
+    }
+
+    #list_search {
+        width: 1200px;
+        padding-bottom: 40px
+    }
+
+    .w1200 {
+        margin: auto;
+        overflow: visible;
+        position: relative;
+    }
+
+    .filter-container {
+        height: auto;
+    }
+
+    .sort-subject {
+        padding-bottom: 10px;
+        padding-top: 10px;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 15px;
+        position: relative;
+    }
+
+    .left_border {
+        background: #C70001;
+        height: 14px;
+        float: left;
+        margin-top: 8px;
+        margin-right: 8px;
+        width: 4px;
+    }
+
+    .sort-subject .sort_header {
+        color: #000;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .filter-container span {
+        box-sizing: border-box;
+        color: #999;
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        font-size: 14px;
+        height: 30px;
+        line-height: 30px;
+        padding-left: 0;
+        vertical-align: top;
+        width: 85px;
+    }
+
+    .sort-subject .search-type {
+        display: inline-block;
+    }
+
+    .sort-subject .ss_list {
+        background-color: #f3f3f3;
+        color: #5e5e5e;
+        cursor: pointer;
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        line-height: 30px;
+        margin-right: 5px;
+        padding: 0 8px;
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .sort-subject .ss_list.del-all {
+        color: #ff890f;
+    }
+
+    .sort-subject .ss_list span {
+        color: #5e5e5e;
+        font-size: 12px;
+        padding: 0 6px;
+        width: auto;
+    }
+
+    .sort-subject .ss_list .search_icon_close {
+        position: absolute;
+        right: -6px;
+        top: -6px;
+        display: inline-block;
+        color: white;
+        width: 15px;
+        height: 15px;
+        background: #A6A5A6;
+        padding: 0;
+        text-align: center;
+        line-height: 15px;
+        border-radius: 8px;
+    }
+
+    #search_detail {
+        background-color: #F0F0F0;
+        padding: 20px;
+        position: relative;
+    }
+
+    .filter-container .filter {
+        margin-bottom: 4px;
+    }
+
+    .filter-container .filter {
+        font-size: 0;
+        margin-bottom: 10px;
+    }
+
+    .filter-container .filter>span {
+        color: #000;
+        font-weight: bold;
+    }
+
+    .filter-container .filter-right {
+        padding: 0;
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        position: relative;
+        vertical-align: middle;
+    }
+
+    #search_detail li {
+        margin-right: 20px;
+    }
+
+    .filter-container .filter-right li {
+        margin-bottom: 4px;
+    }
+
+    .filter-container .filter-right li {
+        margin-bottom: 4px;
+    }
+
+    .filter-container .filter-right li {
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        font-size: 13px;
+        height: 30px;
+        line-height: 30px;
+        margin-bottom: 10px;
+        transition: all 0.3s ease 0s;
+        vertical-align: middle;
+    }
+
+    .filter-container .filter-right li a {
+        color: #5e5e5e;
+        padding: 0 5px;
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    .detail {
+        cursor: pointer;
+    }
+
+    .filter-container .filter-right li.selected {
+        color: #eeb135;
+    }
+
+    .selected-btn {
+        background-color: #eeb135;
+        color: #fff;
+    }
+
+    .fenlei {
+        text-align: center;
+        font-size: 18px;
+        display: none;
+    }
+</style>

@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+
+<head>
+	<title> 文化有约-文化休闲何处去，公益场馆零距离。 </title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="文化有约,公共文化服务，文化产业，文化产品">
+	<meta name="author" content="文化有约网站">
+	<meta name="description" content="文化休闲何处去，公益场馆零距离 ">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="./static/image/favicon.ico" />
+
+	<!-- Bootstrap -->
+	<link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Icon Fonts -->
+	<link href="static/css/font-awesome.css" rel="stylesheet">
+
+	<!-- Owl Carousel Assets -->
+	<link href="static/css/owl.carousel.css" rel="stylesheet">
+	<link href="static/css/owl.theme.css" rel="stylesheet">
+	<link href="static/css/owl.transitions.css" rel="stylesheet">
+
+	<!-- Theme -->
+	<link href="static/css/theme-responsive.css" rel="stylesheet">
+	<link href="static/css/theme-animate.css" rel="stylesheet">
+	<link href="static/css/theme-elements.css" rel="stylesheet">
+	<link href="static/css/theme-blog.css" rel="stylesheet">
+	<link href="static/css/theme-shop.css" rel="stylesheet">
+	<link href="static/css/theme.css" rel="stylesheet">
+
+	<link href="static/css/frontend-common.css" rel="stylesheet">
+	<link href="static/css/style.css" rel="stylesheet">
+
+	<!-- Visit Counter -->
+	<link href="static/css/odometer-theme-car.css" rel="stylesheet">
+
+	<!-- 上传图片组件样式 -->
+	<link rel="stylesheet" href="static/lib/fileinput.min.css">
+
+</head>
+
+<body>
+	<div id="page">
+
+
+
+
+
+
+
+
+		<header>
+			<div class="top" style=""></div>
+		</header>
+
+
+
+		<!-- Begin Main -->
+		<div role="main" class="main">
+			<!-- Begin Main -->
+			<div role="main" class="main" id="id-detail-page">
+			</div>
+			<!-- End Main -->
+			<!-- 分享按钮功能 -->
+			<div id="db-div-sharing" style="display: none; position: absolute;" class="div-sharing">
+				<div class="bd">
+					<ul>
+						<li class="rec-sin"><a href="#" class="share-2-sin">新浪微博</a></li>
+						<li class="rec-qqim"><a target="#" href="" class="share-2-qqim">QQ好友</a></li>
+						<li class="rec-qzone"><a target="#" href="" class="share-2-qzone">QQ空间</a></li>
+						<li class="rec-tx"><a href="#" class="share-2-tx">腾讯微博</a></li>
+						<li class="rec-wx"><a href="#" class="share-2-wx">微信</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="dui-dialog" class="dui-dialog" style="display: none; position: fixed;">
+				<span style="width: 400px; height: 202px;" class="dui-dialog-shd"></span>
+				<div class="dui-dialog-content">
+					<a href="#" class="dui-dialog-close">X</a>
+					<div class="hd">
+						<span><b>扫描下方二维码分享到微信</b></span>
+					</div>
+					<div style="height: auto; overflow: visible;" class="bd">
+						<div id="doubanshare-qr-img"
+							style="width: 175px; height: 180px; display: inline-block; zoom: 1; overflow: hidden; background: #f4f4f4; vertical-align: top; text-align: center; line-height: 175px;">
+							<!-- <img src="http://www.wenhuayouyue.com/qrcode/gen?text=http://www.wenhuayouyue.com/detail/23238?size=175"> -->
+						</div>
+						<div style="width: 220px; height: 180px; display: inline-block;">
+							<img src="static/picture/qr_help.png" width="215">
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+		</div>
+		<!-- End Main -->
+	</div>
+
+
+
+
+	<!-- 底部公共代码 -->
+	<div class="foot" style=""></div>
+	<div class="bootbox modal fade bootbox-confirm in" id="modal1" tabindex="-1" role="dialog" aria-hidden="false">
+		<div class="modal-dialog">
+			<div class="modal-content" style="border-radius: 0px;">
+				<div class="modal-body"><button type="button" class="bootbox-close-button close" data-dismiss="modal"
+						aria-hidden="true" style="margin-top: -10px;" onclick="exit()">×</button>
+					<div class="bootbox-body" style="text-align: center;margin: 50px 0;">确定预约?</div>
+				</div>
+				<div class="modal-footer" style="text-align: center;border-top:0;"><button data-bb-handler="cancel"
+						type="button" class="btn btn-default" onclick="exit()">取消</button><button
+						data-bb-handler="confirm" type="button" class="btn btn-primary" onclick="order()"
+						style="background-color: #f1b236;border: 1px solid #f1b236;">确认</button></div>
+			</div>
+		</div>
+	</div>
+	<div class="bootbox modal fade bootbox-confirm in" id="modal2" tabindex="-1" role="dialog" aria-hidden="false">
+		<div class="modal-dialog" style="margin: 150px auto;">
+			<div class="modal-content" style="border-radius: 0px;">
+				<div class="modal-body"><button id="exitButton" type="button" class="bootbox-close-button close" data-dismiss="modal"
+						aria-hidden="true" style="margin-top: -10px;" onclick="exit()">×</button>
+					<div style="text-align: center;margin-top: 20px;" id="text">
+					</div>
+					<div style="text-align: center;margin-top: 10px;" id="text_code">
+						<img id="code"><!-- 二维码 -->
+						<br>
+						<br>[支付宝]扫一扫进行支付
+					</div>
+				</div>
+				<div id="toStr" class="modal-footer"><button data-bb-handler="confirm" type="button" class="btn btn-default"
+						onclick="ToStr()" style="background-color: #f1b236;border: 1px solid #f1b236;">确认</button></div>
+				<div id="toMyApply" class="modal-footer"><button data-bb-handler="confirm" type="button" class="btn btn-default"
+						onclick="ToMyApply()" style="background-color: #f1b236;border: 1px solid #f1b236;">已支付</button></div>
+			</div>
+		</div>
+	</div>
+	<div class="bootbox modal fade bootbox-confirm in" id="modal3" tabindex="-1" role="dialog" aria-hidden="false">
+		<!-- style="display: none;" -->
+		<div class="modal-dialog" style="margin: 150px auto;">
+			<div class="modal-content" style="border-radius: 0px;">
+				<div class="modal-body" style="overflow-y: scroll;max-height: 400px;">
+					<button type="button" class="bootbox-close-button close" data-dismiss="modal" aria-hidden="true"
+						style="margin-top: -10px;" onclick="exit()">×</button>
+					<div class="bootbox-body" style="text-align: center;">身份证仅用于门禁系统人脸识别</div>
+					<div class="text_main" style="margin-top: 15px;">
+						<div style="text-align: center;margin-top: 10px;padding-right: 20px;" class="text_1">
+							<span>姓名：</span>
+							<input type="text" name="staticPath" placeholder="请输入姓名" value="" class="staticPath_name" />
+							<span>身份证：</span>
+							<input type="text" name="staticPath" placeholder="请输入身份证号码" value=""
+								class="staticPath_id" />
+						</div>
+						<div style="text-align: center;margin-top: 10px;color: #ccc;font-size: 14px;" class="text_2">
+
+						</div>
+					</div>
+					<div class="numclass">
+						<button class="reduce" style="display: none;">
+							删除
+						</button>
+						<button class="add" style="display: none;">
+							添加
+						</button>
+					</div>
+					<div style="text-align: center;" class="add_all">
+						<button id="add">+新增成员</button>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<div style="width: 75%;float: left;text-align: center;padding-left: 140px;line-height: 44px;">
+						<span id="tips" style="color:#ed4014;"></span>
+					</div>
+					<button data-bb-handler="confirm" type="button" class="btn btn-default" onclick="infotrue()"
+						style="background-color: #f1b236;border: 1px solid #f1b236;outline: none;">确认</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 点评表单 start -->
+	<div class="bootbox modal fade bootbox-confirm in" id="commentModal" tabindex="-1" role="dialog" aria-hidden="false">
+		<!-- style="display: none;" -->
+		<div class="modal-dialog" style="margin: 80px auto; width: 1000px;">
+			<div class="modal-content" style="border-radius: 0px;">
+				<div class="modal-body" style="max-height: 600px; overflow-y: auto;">
+					<button type="button" class="bootbox-close-button close" data-dismiss="modal" aria-hidden="true"
+						style="margin-top: -10px;" onclick="addCommentHide()">×</button>
+					<div class="bootbox-body" style="text-align: center;">我要点评</div>
+					<div class="comment-body">
+						<div class="comment-body-item">
+							<div class="comment-body-item_label">留言</div>
+							<div class="comment-body-item_content">
+								<textarea id="comment-content" style="width: 100%; height: 100px;"></textarea>
+							</div>
+						</div>
+						<div class="comment-body-item">
+							<div class="comment-body-item_label">评分</div>
+							<div class="comment-body-item_content">
+								<div class="comment-star" id="comment-star"></div>
+								<div class="comment-star-text" id="comment-star-text"></div>
+							</div>
+							<input id="comment-score" style="display: none;" />
+						</div>
+						<div class="comment-body-item">
+							<div class="comment-body-item_label">上传图片</div>
+							<div id="upload-box" class="comment-body-item_content upload">
+								<input type="file" name="file" id="upload" multiple class="file-loading" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<div style="width: 75%;float: left;text-align: center;padding-left: 140px;line-height: 44px;">
+						<span id="tips" style="color:#ed4014;"></span>
+					</div>
+					<button id="submitCommentBtn" data-bb-handler="confirm" type="button" class="btn btn-default" onclick="submitComment()"
+						style="background-color: #f1b236;border: 1px solid #f1b236;outline: none;">确认</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 点评表单 end -->
+
+	<div class="modal-backdrop fade in" style="display: none;"></div>
+	<script src="static/js/jquery.min.js"></script>
+	<script src="static/js/bootstrap.min.js"></script>
+	<script src="static/js/bootstrap-hover-dropdown.min.js"></script>
+	<script src="static/js/owl.carousel.js"></script>
+	<script src="static/js/modernizr.custom.js"></script>
+	<script src="static/js/jquery.stellar.js"></script>
+	<script src="static/js/jquery.validation.js"></script>
+	<script src="static/js/masonry.pkgd.min.js"></script>
+	<script src="static/js/jquery.pricefilter.js"></script>
+	<script src="static/js/jquery.bxslider.min.js"></script>
+	<script src="static/js/mediaelement-and-player.js"></script>
+	<script src="static/js/waypoints.min.js"></script>
+	<script src="static/js/jquery.spinner.min.js"></script>
+	<script src="static/js/bootbox.min.js"></script>
+	<script src="static/js/theme.plugins.js"></script>
+	<script src="static/js/theme.js"></script>
+	<script src="static/js/frontend-common.js"></script>
+	<script src="static/js/jquery.qrcode.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/js/myjs.js"></script>
+	<script src="static/js/utils.js"></script>
+	<!-- 评分组件 -->
+	<script src="static/lib/jquery.raty.min.js"></script>
+	<script src="static/lib/fileinput.min.js"></script>
+	<script src="static/lib/locales/zh.js"></script>
+	<script>
+		// 引入common的底部代码
+		$(document).ready(function () {
+			$(".foot").load("common/foot.html");
+			$(".top").load("common/top.html", function () {
+				$('#category').mouseover(function () {
+					$('#dropdown_div').fadeIn()
+				})
+				$('#category').mouseleave(function () {
+					$('#dropdown_div').hide()
+				})
+				$('#dropdown_div').mouseover(function () {
+					$(this).show()
+				})
+				$('#dropdown_div').mouseleave(function () {
+					$(this).hide()
+				})
+			});
+			$("#toMyApply").hide();
+		});
+	</script>
+	<script>
+		var id = getUrlCode().a
+
+		function getUrlCode() {
+			var url = location.search
+			this.winUrl = url
+			var theRequest = new Object()
+			if (url.indexOf('?') != -1) {
+				var str = url.substr(1)
+				var strs = str.split('&')
+				for (var i = 0; i < strs.length; i++) {
+					theRequest[strs[i].split('=')[0]] = (strs[i].split('=')[1])
+				}
+			}
+			return theRequest
+		}
+		var type_active = 0
+		if (window.sessionStorage.getItem('type')) {
+			type_active = window.sessionStorage.getItem('type')
+		}
+		//加减数量
+		function add() {
+			let activedSessionId = ''
+			$(".range>.range-item ").each(function (index, ele) {
+				if ($(ele).hasClass("selected")) {
+					activedSessionId = ele.id
+					// arr_btn.push(ele.id)
+				}
+			});
+			let num = $(`#quantitySelected${activedSessionId}`).val()
+			let nummax = $(`#quantitySelected${activedSessionId}`).attr("data-max")
+			if (num < nummax) {
+				num++
+			} else {
+				num = nummax
+			}
+			$(`#quantitySelected${activedSessionId}`).val(num)
+		}
+
+		function down() {
+			let activedSessionId = ''
+			$(".range>.range-item ").each(function (index, ele) {
+				if ($(ele).hasClass("selected")) {
+					activedSessionId = ele.id
+					// arr_btn.push(ele.id)
+				}
+			});
+			let num = $(`#quantitySelected${activedSessionId}`).val()
+			if (num > 1) {
+				num--
+			} else {
+				num = 1
+			}
+			$(`#quantitySelected${activedSessionId}`).val(num)
+		}
+		//记录校验错误的东西次数
+		let errorid = false
+		let errorname = false
+		$('.modal-content').on('blur', '.staticPath_id', function () {
+
+			if ($(this).val() == '') {
+				$('#tips').html('身份证不能为空')
+				// $('.text_2').html('身份证不能为空')
+				errorid = true
+				return false
+			} else {
+				$('.text_2').html('')
+				errorid = false
+			}
+			if (!isCardNo($(this).val())) {
+				//失败
+				$('#tips').html('身份证格式不正确')
+				// $('.text_2').html('身份证格式不正确')
+				errorid = true
+				return false
+			} else {
+				$('.text_2').html('')
+				errorid = false
+			}
+		})
+
+		function isCardNo(card) {
+			var pattern = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+			return pattern.test(card);
+		}
+		$('.modal-content').on('blur', '.staticPath_name', function () {
+
+			if ($(this).val() == '') {
+				$('#tips').html('姓名不能为空')
+				errorname = true
+				return false
+			} else {
+				errorname = false
+			}
+		})
+		//身份证验证弹窗中bug验证
+		function infotrue() {
+			if (!errorname && !errorid) {
+				$(".modal-body .staticPath_id ").each(function (index, ele) {
+					console.log(`第${index + 1}个` + $(ele).val()); //第几个加身份证
+					console.log(`第${index + 1}个` + $(ele).siblings('.staticPath_name').val()); //第几个加姓名
+				});
+				$('#modal3').hide()
+				$('.modal-backdrop').hide()
+			} else {
+				return false
+			}
+
+		}
+
+		function exit() {
+			$('#modal1').hide()
+			$('#modal2').hide()
+			$('#modal3').hide()
+			$('.modal-backdrop').hide()
+		}
+		//提示
+		function ToStr() {
+			$('#modal2').hide()
+			$('.modal-backdrop').hide()
+		}
+        function ToMyApply() {
+            $('#modal2').hide()
+            $('.modal-backdrop').hide()
+            $('#modal1').hide()
+            $("#toMyApply").hide();
+            window.location.href = '/web/reservation.html'
+        }
+
+		function confirm() {
+			$('#modal1').show()
+			$('.modal-backdrop').show()
+		}
+
+		//定时刷新支付结果
+		function queryPayResult(outTradeNo) {
+			let param={
+                outTradeNo: outTradeNo
+			}
+            $.ajax({
+                //请求方式
+                type: "post",
+                //请求的媒体类型
+                contentType: "application/json;charset=UTF-8",
+                //请求地址
+                url: baseUrl + "/api/aliPay/tradeQuery",
+                //数据，json字符串
+                data: JSON.stringify(param),
+                //请求成功
+                success: function (resp) {
+                    if(resp=="success"){
+                        $('#modal2').hide()
+                        $('.modal-backdrop').hide()
+                        $('#modal1').hide()
+                        $('#text').html('支付成功')
+                        window.location.href = '/web/reservation.html'
+                    }
+                },
+                error: function (e) {
+                }})
+
+        }
+		//预约
+		function order() {
+			let activedSessionId = ''
+			$(".range>.range-item ").each(function (index, ele) {
+				if ($(ele).hasClass("selected")) {
+					activedSessionId = ele.id
+					//console.log(ele.id);//选择的类型id
+					// arr_btn.push(ele.id)
+				}
+			});
+			/*$('#code').each(function (i) {
+				var str = 'https://whyy.081531.cn/h5/#/?id=' + id
+				//默认使用Canvas生成，并显示到图片
+				var qrcode = $(this).qrcode(str).hide();
+				var canvas = qrcode.find('canvas').get(0);
+				$(this).attr('src', canvas.toDataURL('image/jpg'))
+			})*/
+			let num = $(`#quantitySelected${activedSessionId}`).val()
+			let nummax = $(`#quantitySelected${activedSessionId}`).attr("data-max")
+			if (num > nummax) {
+				$('#text_code').hide()
+				$('#modal2').show()
+				$('#text').html('选择的数量不能大于' + nummax)
+				// alert()
+				$('#modal1').hide()
+				// $('.modal-backdrop').hide()
+				return false
+			}
+/*			if (price) {
+				$('#modal2').show()
+				// $('#modal3').show()
+				$('#text').html('该活动请去移动端预约')
+				$('#modal1').hide()
+				$("#code").show()
+				// $('.modal-backdrop').hide()
+				return false
+			}*/
+			//选预约点无登录
+			if (!user) {
+				$('#modal1').hide()
+				$('.layui-layer-content>.title>.t1').html('会员登录')
+				type = 1
+				$('#layui-layer1').show()
+				$('.modal-backdrop').hide()
+				return false
+			}
+			if (!activedSessionId) {
+				$('#modal1').hide()
+				$('#text_code').hide()
+				$('#modal2').show()
+				$('#text').html('请选择的场次')
+				return false
+			}
+			let list = {
+				activedId: active,
+				activedSessionId: activedSessionId,
+				bookingNum: num,
+				memberId: user.id
+			}
+			$.ajax({
+				//请求方式
+				type: "post",
+				//请求的媒体类型
+				contentType: "application/json;charset=UTF-8",
+				//请求地址
+				url: baseUrl + "/api/mobile/reserve",
+				//数据，json字符串
+				data: JSON.stringify(list),
+				//请求成功
+				success: function (result) {
+					if (result.code != 400) {
+
+                        if (price) {
+                            let payParam = {
+                                activedId: active,
+                                activedSessionId: activedSessionId,
+                                memberId: user.id,
+                                bookingId: result.id
+                            }
+                            //获取支付二维码
+                            $.ajax({
+                                    //请求方式
+                                    type: "post",
+                                    //请求的媒体类型
+                                    contentType: "application/json;charset=UTF-8",
+                                    //请求地址
+                                    url: baseUrl + "/api/aliPay/aliPayForPc",
+                                    //数据，json字符串
+                                    data: JSON.stringify(payParam),
+                                    //请求成功
+                                    success: function (resp) {
+									if(resp.result=="success"){
+                                        $('#code').each(function (i) {
+                                            var str = resp.qrCode;
+                                            //默认使用Canvas生成，并显示到图片
+                                            var qrcode = $(this).qrcode(str).hide();
+                                            var canvas = qrcode.find('canvas').get(0);
+                                            $(this).attr('src', canvas.toDataURL('image/jpg'))
+                                        })
+
+                                        $("#toStr").hide();
+                                        $('#modal2').show()
+                                        $('#text').html('<b>支付:</b><span style="font-size: 16px;padding: 2px 5px;margin: 0 3px;color: #fff;background: #f4b138;">'+price*result.bookingNum+'</span>元')
+                                        $('#modal1').hide()
+                                        $("#code").show()
+                                        $("#toMyApply").show();
+										//定时刷新支付结果
+                                        var timer = setInterval(function(){queryPayResult(resp.outTradeNo)}, 10000);
+                                        $("#exitButton").click(function (e) {
+                                            //清除setInterval
+                                            clearInterval(timer);
+                                        });
+									}else{
+                                        $('#modal2').show()
+                                        $('#text').html('请求支付失败:'+resp.message)
+                                        $('#modal1').hide()
+                                        $('.modal-backdrop').hide()
+                                        $('#text_code').hide()
+                                        return false
+									}
+								},
+                                error: function (e) {
+                                    $('#text_code').hide()
+                                    $('#modal2').show()
+                                    $('#modal1').hide()
+                                    $('#text').html(e.responseJSON.message)
+                                }})
+                        }else {
+                            $('#modal1').hide()
+                            $('.modal-backdrop').hide()
+                            window.location.href = '/web/reservation.html'
+						}
+					} else {
+						$('#modal2').show()
+						$('#text').html(result.message)
+						$('#modal1').hide()
+						$('.modal-backdrop').hide()
+						$('#text_code').hide()
+						return false
+					}
+
+				},
+				error: function (e) {
+					$('#text_code').hide()
+					$('#modal2').show()
+					$('#modal1').hide()
+					$('#text').html(e.responseJSON.message)
+				}
+			})
+		}
+		var active = 0
+		var price = 0
+		var isRemark = ''
+		var numId = 1
+		$('#add').click(function () {
+			let activedSessionId = ''
+			$(".range>.range-item ").each(function (index, ele) {
+				if ($(ele).hasClass("selected")) {
+					activedSessionId = ele.id
+					//console.log(ele.id);//选择的类型id
+					// arr_btn.push(ele.id)
+				}
+			});
+			let nummax = $(`#quantitySelected${activedSessionId}`).attr("data-max")
+			if (numId >= nummax) {
+				return false
+			}
+			let cnhtml = `<div class="text_main">
+				<div style="text-align: center;margin-top: 20px;padding-right: 20px;" class="text_1">
+				<span>姓名：</span>
+				<input type="text" name="staticPath" placeholder="请输入姓名" value="" class="staticPath_name" />
+							<span>身份证：</span>
+							<input type="text" name="staticPath" placeholder="请输入身份证号码" value="" class="staticPath_id" />
+						</div>
+						<div style="text-align: center;margin-top: 10px;color: #ccc;font-size: 14px;" class="text_2">
+						</div>
+						</div>
+						`
+			$('.numclass').before(cnhtml)
+			numId++
+			$(this).attr('disabled', true).css({
+				'background': '#ccc',
+				'border': '1px solid #ccc',
+				'cursor': 'no-drop'
+			})
+			$('.reduce').show()
+			$('.staticPath_name').focus()
+			$('.add').show()
+		})
+		$('.add').click(function () {
+			if (!errorname && !errorid) {
+				$('.reduce').hide()
+				$('.add').hide()
+				$('#add').attr('disabled', false).css({
+					'background': '#f1b236',
+					'border': '1px solid #f1b236',
+					'cursor': 'pointer'
+				})
+			} else {
+				return false
+			}
+		})
+		$('.reduce').click(function () {
+			$('.modal-body .text_main:last').remove()
+			numId--
+			$('#add').attr('disabled', false).css({
+				'background': '#f1b236',
+				'border': '1px solid #f1b236',
+				'cursor': 'pointer'
+			})
+			$('.reduce').hide()
+			$('.staticPath_name').focus()
+			$('.add').hide()
+			/* if(numId>1){
+				$('.reduce').show()
+			}else{
+				$('.reduce').hide()
+			} */
+		})
+		function getStarNum (score) {
+			var stars = 0
+			if (score < 1 || !score) { // 没有星星
+				stars = 0
+			} else if (score > 0 && score <= 1) { // 一颗星星
+				stars = 5
+			} else if (score <= 2) { // 两颗星星
+				stars = 20
+			} else if (score > 2 && score <= 3) { // 三颗星星
+				stars = 30
+			} else if (score > 3 && score <= 3.5) { // 三颗半星星
+				stars = 35
+			} else if (score > 3.5 && score < 4) { // 四颗星星
+				stars = 40
+			} else if (score > 4 && score <= 4.5) { // 四颗半星星
+				stars = 45
+			} else { // 五颗星星
+				stars = 50
+			}
+			return stars
+		}
+
+		function getCommentDetail () {
+			var commentHtml = ''
+			$.ajax({
+				//请求方式
+				type: "GET",
+				//请求的媒体类型
+				contentType: "application/json;charset=UTF-8",
+				//请求地址
+				url: baseUrl + "/pc/getScoreDetails?activedId=" + id,
+				async: false,
+				success: function (res) {
+					console.log(res)
+					var nums = 0
+					var scores = 0
+					var _nums = [0, 0, 0, 0, 0] // 1分 ~ 5分 人数
+					var _nums_width = [0, 0, 0, 0, 0] // 1分 ~ 5分 宽度
+					var stars = getStarNum(res.avgScore)
+
+					if (res.detail && res.detail.length) {
+						for(var i = 0; i < res.detail.length; i++) {
+							if (res.detail[i].score > 0) {
+								nums += Number(res.detail[i].num)
+								scores += Number(res.detail[i].score)
+							}
+						}
+						for(var i = 0; i < res.detail.length; i++) {
+							if (res.detail[i].score > 0) {
+								_nums[res.detail[i].score - 1] = res.detail[i].num
+								_nums_width[res.detail[i].score - 1] = parseInt(res.detail[i].num / nums * 100)
+							}
+						}
+					}
+					commentHtml = `
+						<div class="evaluate" id="evaluate-area">
+							<span class="my-title">
+								活动评价
+								<span class="addComment" id="addComment">我要点评</span>
+							</span>
+							<div class="my-box-line2 "></div>
+							<div class="whzg-rating">
+								<div class="col-sm-4 col-xs-4 rating-left ">
+									<h1 class="score">
+										<span>${res.avgScore}</span>分
+									</h1>
+									<div>
+										<span class="mid-rank-stars mid-str${stars}"></span>
+									</div>
+									<p class="number">
+										共<span>${nums}</span>人评分
+									</p>
+								</div>
+								<div class="col-sm-8 col-xs-8 rating-right">
+									<ul>
+										<li><span>5分</span>
+											<p>
+												<i style="width: ${_nums_width[4]}%"></i>
+											</p> <span>${_nums[4]}人</span>
+										</li>
+										<li><span>4分</span>
+											<p>
+												<i style="width: ${_nums_width[3]}%"></i>
+											</p> <span>${_nums[3]}人</span>
+										</li>
+										<li><span>3分</span>
+											<p>
+												<i style="width: ${_nums_width[2]}%"></i>
+											</p> <span>${_nums[2]}人</span>
+										</li>
+										<li><span>2分</span>
+											<p>
+												<i style="width: ${_nums_width[1]}%"></i>
+											</p> <span>${_nums[1]}人</span>
+										</li>
+										<li><span>1分</span>
+											<p>
+												<i style="width: ${_nums_width[0]}%"></i>
+											</p> <span>${_nums[0]}人</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							${getCommentListHtml()}
+						</div>
+					`
+				}
+			})
+			return commentHtml
+		}
+
+		function getCommentListHtml () {
+			var html = ''
+			$.ajax({
+				//请求方式
+				type: "GET",
+				//请求的媒体类型
+				contentType: "application/json;charset=UTF-8",
+				//请求地址
+				url: baseUrl + "/api/mobile/getListByActivedId?activedId=" + id,
+				async: false,
+				success: function (res) {
+					console.log(res)
+					var item = ''
+					for(var i = 0; i < res.length; i++) {
+						var images = ''
+						for (var img = 1; img <= 9; img++) {
+							images += res[i]['pic' + img] ? `<img class="comment-img" src="${res[i]['pic' + img]}" />`: ''
+						}
+						item += `
+							<li class="item">
+								<div class="phone">${res[i].phone}</div>
+								<div class="mid-rank-stars mid-str${getStarNum(res[i].score)}"></div>
+								<div class="comment-content">${res[i].commentContent}</div>
+								<div class="comment-images">
+									${images}
+								</div>
+							</li>
+						`
+					}
+					html = `
+						<div class="all" id="id-comment-all">
+							<h1 class="all-title">全部评价（${res.length}）</h1>
+							<ul class="all-list">
+								${item}
+							</ul>
+						</div>
+					`
+				}
+			})
+			return html
+		}
+
+		/**判断是否要支付*/
+		function needPayFlag(activedSessionId){
+		    flag=false;
+		    if(user!=null&&user.id){
+                let param={
+                    activedSessionId: activedSessionId,
+                    memberId: user.id
+                }
+                $.ajax({
+                    //请求方式
+                    type: "post",
+                    //请求的媒体类型
+                    contentType: "application/json;charset=UTF-8",
+                    //请求地址
+                    url: baseUrl + "/api/aliPay/getPayFlag",
+                    //数据，json字符串
+                    data: JSON.stringify(param),
+                    async:false,
+                    //请求成功
+                    success: function (resp) {
+						if(resp==1){
+                            flag=true;
+						}
+                    },
+                    error: function (e) {
+                    }})
+			}
+
+		    return flag;
+		}
+
+		function goToPay(){
+            window.location.href = '/web/reservation.html';
+		}
+
+
+		$(function () {
+
+			$.ajax({
+				//请求方式
+				type: "GET",
+				//请求的媒体类型
+				contentType: "application/json;charset=UTF-8",
+				//请求地址
+				url: baseUrl + "/api/mobile/getDetail?id=" + id + '&type=' + type_active,
+				//数据，json字符串
+				// data : JSON.stringify(list),
+				//请求成功
+				success: function (result) {
+					if (result.venue.venueDetatil) {
+						result.venue.venueDetatil = result.venue.venueDetatil.replace(/\<img/gi,
+							'<img style="width: 100%;height:auto"');
+					} else {
+						result.venue.venueDetatil = ''
+					}
+					if (result.actived.content) {
+						result.actived.content = result.actived.content.replace(/\<img/gi,
+							'<img style="width: 100%;height:auto"');
+					} else {
+						result.actived.content = ''
+					}
+					let note = ''
+					let html = ''
+					let arr = []
+					let slideHtml = ''
+					let rangeItem = ''
+					let sceneItem = ''
+					let htmlca = ''
+					let htmlcab = ''
+					isRemark = result.actived.remark
+					price = result.actived.price
+					active = result.actived.id
+					autoType=result.actived.autoType
+					teamTag=result.actived.teamTag
+					for (var i = 0; i < result.popularIty.length; i++) {
+						slideHtml +=
+							`<div class="pop-active" onclick="window.location.href = '/web/detail.html?a=' + ${result.popularIty[i].id}+'&type='+${autoType}">
+								<a href="javascript:;"><img src="${"https://whgdlyj3.jiaxing.gov.cn//sys/common/static/" + result.popularIty[i].pic}" alt=""></a>
+								<p>${result.popularIty[i].activeName}，已有<b>${result.popularIty[i].joinNum}</b>人
+									参加
+								</p>
+							</div>`
+					}
+					if (result.sessionList.length == 0) {
+						sceneItem += `<div>很抱歉，您来晚了，本场活动预约已结束</div>`
+					}
+					for (var j = 0; j < result.sessionList.length; j++) {
+						let date = new Date()
+						let newTime = date.getTime()
+						rangeItem +=
+							`<div class="range-item ${!j ? "selected" : ''}"
+					id="${result.sessionList[j].id}" style="width:80%;height:40px;">
+					<span class="hidden">【嘉兴市图书馆南湖区分馆】“布谷鸟”亲子活动:10月17日10:00 - 11:00
+					</span>
+					<span class="hidden">
+					预约
+					</span>
+						<a style="width: 350px;float: left" class="scene-time" href=""
+							title="预约时间：${parseTime(result.sessionList[j].autoStartTime, "{y}-{m}-{d} {h}:{i}")} 至
+							${parseTime(result.sessionList[j].autoEndTime, "{y}-{m}-{d} {h}:{i}")}&#10;
+							活动时间：${parseTime(result.sessionList[j].sessionStartTime, "{y}-{m}-{d} {h}:{i}")} 至
+							${parseTime(result.sessionList[j].sessionEndTime, "{y}-{m}-{d} {h}:{i}")}">
+							${parseTime(result.sessionList[j].sessionStartTime, "{y}-{m}-{d} {h}:{i}")}
+							<span style="color:#d0292e;">至</span> ${parseTime(result.sessionList[j].sessionEndTime,
+									"{y}-{m}-{d} {h}:{i}")}
+
+					</a>
+<span style="font-size: 16px;padding: 2px 5px;margin: 0 3px;color: #fff;background: #f4b138;" class="tag2">${teamTag == 1?'团体':autoType == 1?'预约':autoType==2 ? '抽奖' :autoType==3?'免预约': '免预约'}</span>
+
+
+					</div>`
+
+
+						if (faultTime(newTime, result.sessionList[j].autoStartTime) == '来迟') {
+							if (faultTime(newTime, result.sessionList[j].autoEndTime) != '来迟') {
+							    //判断是否要支付
+									payFlag=needPayFlag(result.sessionList[j].id);
+                                    if(payFlag){
+                                        buttonHtml= `<input type="button" value="马上去支付" class="btn btn-primary btn-icon book-btn" onclick="goToPay()" style="background-color: #f1b236;border-color: #f1b236;"> `;
+                                    }else {
+                                        buttonHtml= `<input type="button" value="${autoType==3 ? '感兴趣' :autoType==1?'立即预约': '立即预约'}" class="btn btn-primary btn-icon book-btn" onclick="confirm()" style="background-color: #f1b236;border-color: #f1b236;"> `;
+                                    }
+                                    //原先是总数，现在是各个时间段数
+                                    sceneItem += `<div class="scene-info ${j ? "hidden" : ''}" " data-scene="${result.sessionList[j].id}">
+													<div class=" my-box-line" style="color:#c61b22;">
+														<p>
+															<i class="fa fa-clock-o"></i> <span>
+																预约剩余时间: ${faultTime(newTime, result.sessionList[j].autoEndTime)}</span>
+														</p>
+													</div>
+													<div class="reserveCon-right-now">
+														<span><b class="has">${result.sessionList[j].joinNum}</b>人次已参与</span>
+														<span><b class="not">${result.sessionList[j].maxNumber}</b>份剩余名额</span>
+													</div>
+													<div class="reserveCon-button">
+														<div class="quantity pull-left">
+															<div data-trigger="spinner" id="spinner">
+																<input onclick="down()" type="button" class="minus" value="-" data-spin="down">
+																<input id="quantitySelected${result.sessionList[j].id}" class="quantitySelected input-text qty" type="text" value="1"  data-rule="quantity" data-max="${result.sessionList[j].autoMaxPeople}" name="quantitySelected${result.sessionList[j].id}">
+																<input onclick="add()" type="button" class="plus" value="+" data-spin="up">
+															</div>
+														</div>
+														<span>
+															${buttonHtml}
+													</div>
+													<div>
+														<p> </p>
+														<div class="clearfix"></div>
+														<span title="点击此处查看本场次入围用户名单"> <i class="fa fa-trophy fa-2x " style="color: #ef9b37"></i>
+															<a href="#join-list-panel" class="txt-color-orange" onclick="showJoinList('${result.sessionList[j].id}')">本场次入围用户名单</a>
+														</span>
+													</div>
+												</div>
+`
+
+							} else {
+								sceneItem += `<div class="scene-info ${j ? "hidden" : ''}" " data-scene="${result.sessionList[j].id}">
+													<div class=" my-box-line" style="color:#c61b22;">
+														<p>
+															<i class="fa fa-clock-o"></i> <span>很遗憾，您来晚了，本场活动预约已于${parseTime(result.sessionList[j].autoEndTime, '{y}-{m}-{d} {h}:{i}')}结束。
+															</span>
+														</p>
+													</div>
+													<div class="reserveCon-right-now">
+													<span><b class="has">${result.sessionList[j].joinNum}</b>人次已参与</span>
+													</div>
+													<div class="reserveCon-button">
+													</div>
+													<div>
+														<p> </p>
+														<div class="clearfix"></div>
+
+														<span title="点击此处查看本场次入围用户名单"> <i class="fa fa-trophy fa-2x " style="color: #ef9b37"></i>
+															<a href="#join-list-panel" class="txt-color-orange" onclick="showJoinList('${result.sessionList[j].id}')">本场次入围用户名单</a>
+														</span>
+													</div>
+												</div>`
+							}
+						} else {
+							sceneItem += `<div class="scene-info ${j ? "hidden" : ''}" " data-scene="${result.sessionList[j].id}">
+													<div class=" my-box-line" style="color:#c61b22;">
+														<p>
+															<i class="fa fa-clock-o"></i> <span>本场活动将于${parseTime(result.sessionList[j].autoStartTime, '{y}-{m}-{d} {h}:{i}')}上线，敬请期待。
+															</span>
+														</p>
+													</div>
+													<div class="reserveCon-right-now">
+													<span><b class="has">${result.sessionList[j].joinNum}</b>人次已参与</span>
+													</div>
+													<div class="reserveCon-button">
+													</div>
+													<div>
+														<p> </p>
+														<div class="clearfix"></div>
+
+														<span title="点击此处查看本场次入围用户名单"> <i class="fa fa-trophy fa-2x " style="color: #ef9b37"></i>
+															<a href="#join-list-panel" class="txt-color-orange" onclick="showJoinList('${result.sessionList[j].id}')">本场次入围用户名单</a>
+														</span>
+													</div>
+												</div>`
+						}
+					}
+					// <!--<input id="btnGoMobile" type="button" value="移动客户端" class="btn btn-primary btn-icon book-btn">-->
+					// <!-- <span><a href="#id-comment-all"><b class="not">81</b>人评价</a></span>-->
+					for (var c = 0; c < result.sessionList.length; c++) {
+						htmlcab = ''
+						for (var d = 0; d < result.sessionList[c].memberDtos.length; d++) {
+							// let idc = result.sessionList[c].id
+							// console.log(idc);
+							htmlcab += `
+							<tr>
+								<td>${result.sessionList[c].memberDtos[d].name}</td>
+								<td>${result.sessionList[c].memberDtos[d].phone}</td>
+								<td>确认参加</td>
+							</tr>
+							`
+						}
+						htmlca += `<div class="tab-pane dataJoinList" id="dataJoinList-${result.sessionList[c].id}">
+														<table class="table table-bordered table-hover table-striped">
+															<thead>
+																<tr>
+																	<td>用户名</td>
+																	<td>手机尾号</td>
+																	<td>状态</td>
+																</tr>
+
+															</thead>
+															<tbody>
+															${htmlcab}
+															</tbody>
+														</table>
+													</div>`
+						html +=
+							`<li class="tabJoinList" id="tabJoinList-${result.sessionList[c].id}"><a data-toggle="tab" onclick="showJoinList('${result.sessionList[c].id}')" class="cursor-hand">${parseTime(result.sessionList[c].sessionStartTime, "{y}/{m}/{d} {h}:{i}")} 至<br> ${parseTime(result.sessionList[c].sessionEndTime, "{y}/{m}/{d} {h}:{i}")}</a></li>`
+					}
+
+					note =
+						`<section class="page-top"></section>
+					<div class="container" id="id-detail-head">
+						<div class="row">
+							<div class="col-sm-6 f1">
+								<img class="active_img limitImageWidth"  src="${"https://whgdlyj3.jiaxing.gov.cn//sys/common/static/" + result.actived.pic}" height="500px;">
+							</div>
+							<div class="col-sm-6">
+								<form action="#" id="chooseForm" method="post">
+									<div class="reserveCon-right">
+										<div class="reserveCon-right-info">
+											<h1 class="my-title" style="color:#000;background-color:#fff;">${result.actived.activeName}<span style="color: red">&nbsp;</span>
+											</h1>
+											<div class="my-box-line">
+												<p>
+													<span class="col-sm-8 project-info"><i class="fa fa-phone"></i><span>联系电话：${result.actived.phone}</span></span>
+													<span class="col-sm-4 push-right project-info">&nbsp</span>
+												</p>
+												<p>
+													<i class="fa fa-star"></i><span>主办单位：
+														${result.serviceName}</span>
+												</p>
+												<p>
+													<i class="fa fa-location-arrow"></i><span>活动地点：<a href="#place-geography" title="点击查看地理位置">
+															${result.venue.address}</a></span>
+												</p>
+											</div>
+											<div class="time" id="choose">
+												<div class="range">
+													${rangeItem}
+												</div>
+											</div>
+											<div id="id-reserveCon-detail-info">
+											${sceneItem}
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+
+					<section class="products-slide" id="id-detail-des">
+						<div class="container">
+							<div class=" whzg-detailed-mainCon">
+								<div class="col-sm-9 col-xs-9 mainCon-left ">
+									<div class="tab-content">
+									<span class="my-title">重要通知 <img src="./static/image/tongzhi-4.png"></span>
+									<div style="background-color:#f6f6f6;padding:10px;margin-bottom:30px;">
+									<div class=" detail-tips" style="background-color:#f6f6f6;">
+										<div class="tips-content">
+											<p id="remark" style="display:none;"><b>(${result.actived.remark})</b></p>
+											<p>预约成功后请按照短信提示及时参加活动，如无法准时参加请提前进入“<b>我的账号</b>”点击“<b>我的预约</b>”里，点击“<b>放弃</b>”按钮，将机会让给他人，否则系统将根据<a href="score.html"><b style="color:#f3c447;">用户积分管理暂行办法</b></a>自动扣除您的积分。谢谢您的合作。</p>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									</div>
+										<div class="tab-pane active" id="children1" style="border: 1px solid #f3f3f3;">
+											<span class="my-title">活动详情 </span>
+											<span></span>
+											<div class="con">
+												<div class="my-box-line2 ">
+													${result.actived.content ? result.actived.content : ''}
+												</div>
+											</div>
+											<div class="clearfix"></div>
+											<div class="tab-pane" id="join-list-panel">
+												<span class="my-title">入围用户名单</span>
+												<div class="con">
+												<div class="my-box-line2 ">
+												<div>
+													<ul class="nav nav-tabs second-tabs">
+
+																${html}
+													</ul>
+												</div>
+												<div class="tab-content">
+
+													${htmlca}
+													</div>
+													</div>
+												</div>
+											</div>
+											<div class="tab-pane" id="children2">
+												<span class="my-title">场馆介绍</span>
+												<div class="my-box-line2 ">
+												${result.venue.venueDetatil}
+												</div>
+												<span class="my-title" id="place-geography">场馆位置</span>
+												<div class="my-box-line2 ">
+													<div>
+
+														<div>
+															<input type="hidden" id="placePosition" value="${result.venue.latitude},${result.venue.longitude}"> <input type="hidden" id="placeName" value="${result.venue.address}">
+															<div class="col-md-6" style='width: 100%; height: 500px; margin-bottom: 15px' id="container"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+											${getCommentDetail()}
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3 col-xs-3 mainCon-right ">
+								<h1 class="my-title-right" style="text-align: center;background-color: #43403f;color: #fff;padding: 10px 0;">
+									<span>人气预约</span>
+								</h1>
+									<div class="pop my-box-right" id="id-popular-list">
+										${slideHtml}
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>`
+					$('#id-detail-page').html(note)
+				},
+			}).then(function () {
+				if (isRemark && price > 0) {
+					$('#remark').show()
+				} else {
+					$('#remark').hide()
+				}
+				$('#choose .range-item').click(function (e) {
+					e.preventDefault();
+					var cDiv = $(this);
+					var sceneId = cDiv.attr('id');
+					$("#choose .range-item").each(function (index, ele) {
+						if ($(ele).attr('id') != cDiv.attr('id')) {
+							if ($(ele).hasClass('selected')) {
+								$(ele).removeClass('selected');
+							}
+						}
+					});
+					if ($(this).hasClass('selected')) {
+						$(this).removeClass('selected');
+					} else {
+						$(this).addClass('selected');
+					}
+					$("#id-reserveCon-detail-info .scene-info").each(function (index, ele) {
+						if ($(ele).attr('data-scene') != cDiv.attr('id')) {
+							if (!$(ele).hasClass('hidden')) {
+								$(ele).addClass("hidden");
+							}
+						} else {
+							if ($(ele).hasClass('hidden')) {
+								$(ele).removeClass('hidden');
+							}
+						}
+					});
+					showJoinList(sceneId);
+				});
+				$('#addComment').click(function (e) {
+					if (getUser() === null) {
+						alert('请先登录')
+						return
+					}
+					$('#commentModal').show()
+				})
+				window.onload = loadScript()
+			})
+
+			// 初始化评价的星星
+			$.fn.raty.defaults.path = 'static/lib/img';
+			$('#comment-star').raty({
+				number: 5, //多少个星星设置
+				targetType: 'hint', //类型选择，number是数字值，hint，是设置的数组值
+				path: 'static/lib/img',
+				hints: ['1分', '2分', '3分', '4分', '5分'],
+				cancelOff: 'cancel-off.png',
+				cancelOn: 'cancel-on.png',
+				size: 24,
+				starHalf: 'star-half.png',
+				starOff: 'star-off.png',
+				starOn: 'star-on.png',
+				target: '#comment-star-text',
+				cancel: false,
+				targetKeep: true,
+				targetText: '请选择评分',
+				click: function(score, evt) {
+					$('#comment-score').val(score)
+				}
+			});
+
+
+			var oFileInput = new FileInput();
+    		oFileInput.Init("upload", baseUrl + '/sys/common/upload');
+
+		})
+		// 关闭评价
+		function addCommentHide () {
+			$('#commentModal').hide()
+		}
+
+		//初始化fileinput
+		var FileInput = function () {
+			var oFile = new Object();
+
+			//初始化fileinput控件（第一次初始化）
+			oFile.Init = function(ctrlName, uploadUrl) {
+			var control = $('#' + ctrlName);
+
+			//初始化上传控件的样式
+			control.fileinput({
+				language: 'zh', //设置语言
+				uploadUrl: uploadUrl, //上传的地址
+				allowedFileExtensions: ['jpg', 'gif', 'png'],//接收的文件后缀
+				showUpload: true, //是否显示上传按钮
+				showCaption: false,//是否显示标题
+				browseClass: "btn btn-primary", //按钮样式
+				//dropZoneEnabled: false,//是否显示拖拽区域
+				//minImageWidth: 50, //图片的最小宽度
+				//minImageHeight: 50,//图片的最小高度
+				//maxImageWidth: 1000,//图片的最大宽度
+				//maxImageHeight: 1000,//图片的最大高度
+				//maxFileSize: 0,//单位为kb，如果为0表示不限制文件大小
+				//minFileCount: 0,
+				maxFileCount: 9, //表示允许同时上传的最大文件个数
+				enctype: 'multipart/form-data',
+				validateInitialCount:true,
+				previewFileIcon: "<i class='glyphicon glyphicon-king'></i>",
+				msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}！",
+			});
+
+			//导入文件上传完成之后的事件
+			$("#upload").on("fileuploaded", function (event, data, previewId, index) {
+				console.log(event, data, previewId, index)
+				var res = data
+				if (res.code === 0 && res.message) {
+					// commentImages.push(res.message)
+				}
+			});
+		}
+			return oFile;
+		};
+
+		// 提交评价
+		function submitComment () {
+			var content = $('#comment-content').val()
+			var star = $('#comment-score').val()
+			var images = []
+			if (content.replace(/\s/ig, '') == '') {
+				alert('请输入留言')
+				return
+			}
+			if (star == '' || star <= 0) {
+				alert('请选择评分')
+				return
+			}
+			var user = getUser()
+			if (!user) {
+				alert('请先登录')
+				return
+			}
+			var params = {
+				commentContent: content,
+				score: star,
+				activedId: id,
+				memberId: user ? user.id: null
+			}
+			$('#upload-box').find('.file-preview-success .kv-file-content .file-preview-image').each(function (index) {
+				if (index % 2 === 0) {
+					params['pic' + index] = $(this).attr('alt')
+				}
+			})
+			$('#submitCommentBtn').attr('disabled', true)
+			$.ajax({
+				//请求方式
+				type: "POST",
+				//请求的媒体类型
+				contentType: "application/json;charset=UTF-8",
+				//请求地址
+				url: baseUrl + '/comment/travelComment/add',
+				//数据，json字符串
+				// data : JSON.stringify(list),
+				data: JSON.stringify(params),
+				//请求成功
+				success: function (result) {
+					if (result.code === 200) {
+						alert('评价成功')
+						location.reload()
+					} else {
+						alert(result.message)
+						$('#submitCommentBtn').attr('disabled', false)
+					}
+				},
+				fail: function (e) {
+					$('#submitCommentBtn').attr('disabled', true)
+				}
+			})
+		}
+	</script>
+	<!-- Piwik -->
+	<!-- <script type="text/javascript">
+			var _paq = _paq || [];
+			_paq.push(['trackPageView']);
+			_paq.push(['enableLinkTracking']);
+			(function() {
+				var u = "//logs.wenhuayouyue.com/logs/";
+				_paq.push(['setTrackerUrl', u + 'piwik.php']);
+				_paq.push(['setSiteId', '1']);
+				var d = document,
+					g = d.createElement('script'),
+					s = d.getElementsByTagName('script')[0];
+				g.type = 'text/javascript';
+				g.async = true;
+				g.defer = true;
+				g.src = u + 'piwik.js';
+				s.parentNode.insertBefore(g, s);
+			})();
+		</script>
+		<noscript>
+			<p><img src="static/picture/piwik-1.jpg" style="border:0;" alt=""></p>
+		</noscript> -->
+	<!-- End Piwik Code -->
+
+	<!-- JavaScript -->
+
+	<script src="static/js/detail.js">
+	</script>
+
+</body>
+
+</html>
+<style type="text/css">
+	input {
+		background: none;
+		outline: none;
+		border: 1px solid #ccc;
+	}
+
+	.add {
+		padding: 2px 5px;
+		background-color: #f1b236;
+		border: 1px solid #f1b236;
+		color: #fff;
+		float: right;
+		margin-top: -37px;
+		margin-right: 31px;
+		outline: none;
+	}
+
+	.reduce {
+		padding: 2px 5px;
+		background-color: #ed4014;
+		border: 1px solid #ed4014;
+		color: #fff;
+		float: right;
+		margin-top: -37px;
+		margin-right: -12px;
+		outline: none;
+	}
+
+	.add_all button {
+		padding: 2px 5px;
+		background-color: #f1b236;
+		border: 1px solid #f1b236;
+		color: #fff;
+		outline: none;
+	}
+
+	#id-comment-all h1 {
+		margin-bottom: 0;
+	}
+	#id-comment-all .all-list .item{
+		border-bottom: solid 1px #eee;
+		padding: 10px 15px;
+		position: relative;
+		font-size: 18px;
+		color: #333;
+	}
+	#id-comment-all .all-list .item .phone {
+		color: #999;
+	}
+	#id-comment-all .all-list .item .mid-rank-stars {
+		position: absolute;
+		right: 15px;
+		top: 15px;
+	}
+
+	#id-comment-all .all-list .item .comment-images {
+		clear: both;
+	}
+
+	#id-comment-all .all-list .item .comment-images .comment-img {
+		display: inline-block;
+		margin: 0 10px 10px 0;
+		width: 100px;
+		height: 100px;
+		object-fit: cover;
+	}
+
+	#addComment {
+		float: right;
+		color: #333;
+		padding-right: 20px;
+		font-size: 16px;
+		padding-top: 5px;
+		cursor: pointer;
+	}
+	#addComment:hover {
+		opacity: 0.8;
+	}
+	.comment-body .comment-body-item{
+		margin-bottom: 10px;
+	}
+	.comment-body .comment-body-item_label {
+		font-size: 16px;
+		margin-bottom: 5px;
+	}
+	.comment-body .comment-body-item_content {
+
+	}
+	#comment-content {
+		width: 100%;
+		height: 100px;
+	}
+	#comment-star {
+		display: inline-block;
+		float: left;
+	}
+	#comment-star img {
+		width: 20px;
+		height: 20px;
+	}
+
+	.file-preview .close {
+		display: none;
+	}
+</style>

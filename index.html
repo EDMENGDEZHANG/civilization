@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<title> 文化有约-文化休闲何处去，公益场馆零距离。 </title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="renderer" content="webkit">
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="keywords" content="文化有约,公共文化服务，文化产业，文化产品">
+		<meta name="author" content="文化有约网站">
+		<meta name="description" content="文化休闲何处去，公益场馆零距离 ">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="shortcut icon" href="./static/image/favicon.ico" />
+		<!-- Bootstrap -->
+		<link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Icon Fonts -->
+		<link href="static/css/font-awesome.css" rel="stylesheet">
+
+		<!-- Owl Carousel Assets -->
+		<link href="static/css/owl.carousel.css" rel="stylesheet">
+		<link href="static/css/owl.theme.css" rel="stylesheet">
+		<link href="static/css/owl.transitions.css" rel="stylesheet">
+
+		<!-- Theme -->
+		<link href="static/css/theme-responsive.css" rel="stylesheet">
+		<link href="static/css/theme-elements.css" rel="stylesheet">
+		<link href="static/css/theme-blog.css" rel="stylesheet">
+		<link href="static/css/theme-shop.css" rel="stylesheet">
+		<link href="static/css/theme.css" rel="stylesheet">
+
+		<link href="static/css/frontend-common.css" rel="stylesheet">
+		<link href="static/css/style.css" rel="stylesheet">
+
+		<!-- Visit Counter -->
+		<link href="static/css/odometer-theme-car.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="static/font_ali/iconfont.css"/>
+		<link rel="stylesheet" href="static/css/swiper.min.css">
+		<link rel="stylesheet" href="static/css/animate.min.css">
+	</head>
+	<body style="background-color: #f4f4f4;">
+		<div id="page">
+			<!-- 头部公共代码 -->
+			<header>
+			<div class="top" style=""></div>
+			</header>
+
+			<!-- Begin Main -->
+			<div role="main" class="main">
+				<!-- 滚动橱窗 START -->
+				<section class="main-slide">
+					<div id="owl-main-demo" class="owl-carousel main-demo">
+
+						<div class="item" id="item0">
+							<!-- <img src="static/picture/o_1bdst75l511hjhh6q53aqdlec9.jpg" alt="文化礼堂 精神家园"> -->
+							<div class="item-caption">
+								<div class="item-caption-inner">
+									<p class="item-cat">
+										<a href="#">文化礼堂 精神家园</a>
+									</p>
+									<h2>嘉兴市农村文化礼堂服务项目供需对接平台</h2>
+									<!-- <a target="_blank" href="javascript:;" class="btn btn-white">查看详情</a> -->
+								</div>
+							</div>
+						</div>
+
+						<div class="item" id="item1">
+							<!-- <img src="static/picture/o_1d8im1pt9h7qvd5gf11e9sgbn9.jpg" alt="."> -->
+							<div class="item-caption">
+								<div class="item-caption-inner">
+									<p class="item-cat">
+										<a href="#">.</a>
+									</p>
+									<h2>.</h2>
+									<!-- <a target="_blank" href="javascript:;" class="btn btn-white">查看详情</a> -->
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</section>
+
+
+				<!-- 滚动橱窗 END -->
+				 <div style="margin-top:;background-color: #fff;padding-right: 5px;text-align: center;color: #f4b139;">
+<!--				<img src="static/image/renqihuodong.png" >-->
+				</div>
+				<!-- 艺术赏析END-->
+			</div>
+			<!-- End Main -->
+		</div>
+
+
+
+
+		<!-- 底部公共代码 -->
+		<div class="foot" style=""></div>
+
+		<script src="static/js/jquery.min.js"></script>
+		<script src="static/js/bootstrap.min.js"></script>
+		<script src="static/js/bootstrap-hover-dropdown.min.js"></script>
+		<script src="static/js/owl.carousel.js"></script>
+		<script src="static/js/modernizr.custom.js"></script>
+		<script src="static/js/jquery.stellar.js"></script>
+		<script src="static/js/jquery.validation.js"></script>
+		<script src="static/js/masonry.pkgd.min.js"></script>
+		<script src="static/js/jquery.pricefilter.js"></script>
+		<script src="static/js/jquery.bxslider.min.js"></script>
+		<script src="static/js/mediaelement-and-player.js"></script>
+		<script src="static/js/waypoints.min.js"></script>
+		<script src="static/js/jquery.spinner.min.js"></script>
+		<script src="static/js/bootbox.min.js"></script>
+		<script src="static/js/theme.plugins.js"></script>
+		<script src="static/js/theme.js"></script>
+		<script src="static/js/frontend-common.js"></script>
+		<script src="static/js/myjs.js"></script>
+		<script src="static/js/utils.js"></script>
+		<script src="static/js/swiper.min.js"></script>
+		<script src="static/js/wow.min.js"></script>
+		<script>
+			new WOW().init();
+			$(document).ready(function() {
+				$(".foot").load("common/foot.html");
+				$(".top").load("common/top.html",function(){
+					$('#dropdown_div').show()
+				});
+			});
+			$(function() {
+				//请求参数
+				//
+				$.ajax({
+					//请求方式
+					type: "GET",
+					//请求的媒体类型
+					contentType: "application/json;charset=UTF-8",
+					//请求地址
+					url: baseUrl + "/pc/slideshow",
+					//数据，json字符串
+					// data : JSON.stringify(list),
+					//请求成功
+					success: function(result) {
+						let note = ''
+						let html = ''
+						let arr = []
+						let slideHtml = ''
+						let newHtml = ''
+						let hrefhtml = ''
+						let swiper = ''
+								for (var c = 0; c < result.all.length; c++) {
+								if(result.all[c].redirectUrl){
+									if(result.all[c].redirectUrl.indexOf('http') != -1 || result.all[c].redirectUrl.indexOf('https') != -1){
+										hrefhtml = `window.open('${result.all[c].redirectUrl}')`
+									}else{
+										hrefhtml = `window.open('http://${result.all[c].redirectUrl}')`
+									}
+								}else{
+									hrefhtml = ''
+								}
+									slideHtml +=`
+									<div class="item" id="item${c}" onclick="${hrefhtml}">
+									<img src="${"https://whgdlyj3.jiaxing.gov.cn//sys/common/static/"+result.all[c].filePath}" alt="文化礼堂 精神家园" width="100%" height="100%">
+									<div class="item-caption">
+										<div class="item-caption-inner">
+
+											<h2>
+											${result.all[c].title}</h2>
+										</div>
+									</div>
+									</div>
+								`
+								}
+						newHtml = `
+						<section class="main-slide">
+							<div id="owl-main-demo" class="owl-carousel main-demo">
+								${slideHtml}
+							</div>
+
+						</section>
+						`
+						$('.main').html(newHtml)
+						window.Core.owlCarousel()
+					},
+					//请求失败，包含具体的错误信息
+					error: function(e) {
+						console.log(e.status);
+						console.log(e.responseText);
+					}
+				})
+				})
+			$(function() {
+				//请求参数
+				//
+				$.ajax({
+					//请求方式
+					type: "GET",
+					//请求的媒体类型
+					contentType: "application/json;charset=UTF-8",
+					//请求地址
+					url: baseUrl + "/pc/new/query",
+					//数据，json字符串
+					// data : JSON.stringify(list),
+					//请求成功
+					success: function(result) {
+						let note = ''
+						let html = ''
+						let arr = []
+						let newHtml = ''
+						let hrefhtml = ''
+						let swiper = ''
+						for (x in result.content) {
+							arr.push({
+								name: x,
+								obj: result.content[x]
+							})
+						}
+						for (var i = 0; i < arr.length; i++) {
+							note = ''
+							for (var j = 0; j < arr[i].obj.length; j++) {
+								if(arr[i].name=="热门活动"){
+									swiper+= `<div class="swiper-slide">
+									<a href="detail.html?a=${arr[i].obj[j].id}">
+									<div style="width:100%;height:80%;">
+									<img src="${arr[i].obj[j].pic.indexOf("https")!==0?"https://whgdlyj3.jiaxing.gov.cn//sys/common/static/"+arr[i].obj[j].pic:arr[i].obj[j].pic}" style="object-fit:cover;width:100%;height:100%;">
+									</div>
+									<div style="font-size:14px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;font-weight: 700;padding: 5px 0;">${arr[i].obj[j].activeName}</div>
+									<div style="color:#a2a2a2;font-size:12px;text-align: center;">
+									${arr[i].obj[j].activeType}
+									</div>
+									<div class="active_tag">
+
+										<span style="font-size: 16px;display: inline-block;padding: 2px 5px;margin: 0 3px;color: #fff;background: #f4b138;" class="tag2">${arr[i].obj[j].teamTag == 1?'团体':arr[i].obj[j].autoType==1 ? '预约' :arr[i].obj[j].autoType==2?'抽奖': '免预约'}</span>
+
+									</div>
+										</a>
+								</div>`
+								}
+								if(arr[i].name=="推荐活动" && j<6){
+								note +=
+									`<div class="col-xs-4 col-sm-4 wow animate__slideInUp" data-wow-duration="0.3s" data-wow-delay="0.3s" onclick="window.sessionStorage.setItem('type',2);window.location.href = '/web/detail.html?a=${arr[i].obj[j].id}&type=${arr[i].obj[j].autoType}'">
+											<div class="whzg_active_item">
+
+											<img class="active_img"src="${arr[i].obj[j].pic.indexOf("https")!==0?"https://whgdlyj3.jiaxing.gov.cn//sys/common/static/"+arr[i].obj[j].pic:arr[i].obj[j].pic}">
+												<div class="active_content">
+													<div class="active_title">${arr[i].obj[j].activeName}</div>
+													<div class="active_add" style="float:left;">
+													<span>
+														${arr[i].obj[j].activeType}
+														</span>
+													</div>
+													<div class="active_reserve text-right">
+														<span class="number">${arr[i].obj[j].joinNum}</span>人参与
+													</div>
+												</div>
+												<div class="active_tag">
+													<span style="font-size: 16px" class="tag2">${arr[i].obj[j].teamTag == 1?'团体':arr[i].obj[j].autoType==1 ? '预约' :arr[i].obj[j].autoType==2?'抽奖': '免预约'}</span>
+
+												</div>
+
+											</div>
+										</div>`
+										}
+							}
+							if(arr[i].name=="推荐活动"){
+
+							html =
+							// ${arr[i].name}
+								`
+								<section class="latest-blog" style="margin-top:50px;">
+													<div class="container">
+														<div class="row" style="background-color: #fff;border-radius: 15px;padding-top:10px;padding-bottom:20px;">
+														<div style="padding-left:15px;font-size:18px;font-weight:700;">
+														推荐活动
+														<span style="float:right;padding-right:15px;font-size:16px;font-weight:normal;"><a href="screen.html" style="color:#777;cursor: pointer;">更多&nbsp>></a></span>
+														</div>
+														<hr style="margin:0 15px 20px;height:2px;background-color:#ccc;"/>
+												   ${note}
+
+														</div>
+													</div>
+												</section>`
+												}
+
+						}
+						newHtml = `
+						<div class="container" style="margin-top:50px;">
+						<div class="row wow animate__slideInUp" data-wow-duration="0.3s" data-wow-delay="0.3s">
+						<div class="col-xs-3 col-sm-3 "  style="height:300px;padding-right: 5px;padding-left:0;">
+						<div style="background-color: #fff;height:300px;padding:10px;border-top-left-radius: 10px;border-bottom-left-radius: 10px;">
+						<h3 style="text-align: center;color: #f4b139;">人气活动</h3>
+						<img src="static/image/renqihuodong.png" style="width:100%;height:230px;">
+						</div>
+						</div>
+						<div class="swiper-container col-xs-9 col-sm-9">
+						  <div class="swiper-wrapper">
+						   ${swiper}
+						  </div>
+						  <div class="swiper-button-prev" style="color: #c7c7c7;"></div>
+						      <div class="swiper-button-next" style="color: #c7c7c7;"></div>
+						</div>
+						</div>
+						</div>
+						${html}
+						`
+						$('.main').append(newHtml)
+						window.Core.owlCarousel()
+					},
+					//请求失败，包含具体的错误信息
+					error: function(e) {
+						console.log(e.status);
+						console.log(e.responseText);
+					}
+				}).then(function(){
+					var swiper = new Swiper('.swiper-container', {
+						navigation: {
+						      nextEl: '.swiper-button-next',
+						      prevEl: '.swiper-button-prev',
+						    },
+					  slidesPerView: 4,
+					  spaceBetween: 5
+					});
+				})
+
+			})
+		</script>
+		<!-- Piwik -->
+		<!-- <script type="text/javascript">
+			var _paq = _paq || [];
+			_paq.push(['trackPageView']);
+			_paq.push(['enableLinkTracking']);
+			(function() {
+				var u = "//logs.wenhuayouyue.com/logs/";
+				_paq.push(['setTrackerUrl', u + 'piwik.php']);
+				_paq.push(['setSiteId', '1']);
+				var d = document,
+					g = d.createElement('script'),
+					s = d.getElementsByTagName('script')[0];
+				g.type = 'text/javascript';
+				g.async = true;
+				g.defer = true;
+				g.src = u + 'piwik.js';
+				s.parentNode.insertBefore(g, s);
+			})();
+		</script>
+		<noscript>
+			<p><img src="static/picture/piwik-1.jpg" style="border:0;" alt=""></p>
+		</noscript> -->
+		<!-- End Piwik Code -->
+
+		<!-- JavaScript -->
+
+
+	</body>
+</html>
+<style type="text/css">
+	.main{
+		background-color: #f4f4f4;
+	}
+	.swiper-container {
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+	  width: 75%;
+	  height: 100%;
+	}
+	.swiper-slide {
+	  text-align: center;
+	  font-size: 18px;
+	  background: #fff;
+	  cursor: pointer;
+	  /* Center slide text vertically */
+	  /* display: -webkit-box; */
+	  /* display: -ms-flexbox; */
+	  /* display: -webkit-flex; */
+	  /* display: flex; */
+	  -webkit-box-pack: center;
+	  -ms-flex-pack: center;
+	  -webkit-justify-content: center;
+	  justify-content: center;
+	  -webkit-box-align: center;
+	  -ms-flex-align: center;
+	  -webkit-align-items: center;
+	  align-items: center;
+	  height: 300px;
+	  padding: 25px 15px 10px 15px;
+	}
+</style>

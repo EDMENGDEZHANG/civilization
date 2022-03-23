@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+
+
+	<head>
+		<title> 文化有约-文化休闲何处去，公益场馆零距离。 </title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="renderer" content="webkit">
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="keywords" content="文化有约,公共文化服务，文化产业，文化产品">
+		<meta name="author" content="文化有约网站">
+		<meta name="description" content="文化休闲何处去，公益场馆零距离 ">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="./static/image/favicon.ico" />
+
+		<!-- Bootstrap -->
+		<link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Icon Fonts -->
+		<link href="static/css/font-awesome.css" rel="stylesheet">
+
+		<!-- Owl Carousel Assets -->
+		<link href="static/css/owl.carousel.css" rel="stylesheet">
+		<link href="static/css/owl.theme.css" rel="stylesheet">
+		<link href="static/css/owl.transitions.css" rel="stylesheet">
+
+		<!-- Theme -->
+		<link href="static/css/theme-responsive.css" rel="stylesheet">
+		<link href="static/css/theme-animate.css" rel="stylesheet">
+		<link href="static/css/theme-elements.css" rel="stylesheet">
+		<link href="static/css/theme-blog.css" rel="stylesheet">
+		<link href="static/css/theme-shop.css" rel="stylesheet">
+		<link href="static/css/theme.css" rel="stylesheet">
+
+		<link href="static/css/frontend-common.css" rel="stylesheet">
+		<link href="static/css/style.css" rel="stylesheet">
+
+		<!-- Visit Counter -->
+		<link href="static/css/odometer-theme-car.css" rel="stylesheet">
+
+	</head>
+	<body>
+<div id="page">
+
+
+<header>
+	<div class="top" style=""></div>
+</header>
+
+
+
+		<!-- Begin Main -->
+		<div class="page-404">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+
+	<!-- MAIN CONTENT -->
+	<div id="content">
+		<div class="row">
+			<div class="col-sm-2"></div>
+			<header class="col-sm-4">
+				<h3>我的资料</h3>
+			</header>
+			<div class="col-sm-12">
+				<div id="wid-id-user">
+					<!-- widget content -->
+					<div>
+						<form class="form-horizontal" id="userForm" method="POST" action="/my/profile" novalidate="novalidate">
+							<fieldset>
+								<div class="form-group">
+									<label class="col-md-2 control-label">登录帐号</label>
+									<div class="col-md-4 control-div" id="username"></div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label">类别</label>
+									<div class="col-md-4 control-div" id="type_class">
+										个人</div>
+								</div>
+								<!-- <div class="form-group">
+									<label class="col-md-2 control-label">邮件地址</label>
+									<div class="col-md-4">
+										<input id="id" name="id" type="hidden" value="41049">
+										<input id="email" name="email" class="form-control" placeholder="邮件地址" type="text" value="317035358@qq.com">
+
+									</div>
+								</div> -->
+								<!-- <div class="form-group">
+									<label class="col-md-2 control-label">区域</label>
+									<div class="col-md-4">
+
+										<select id="locationId" name="locationId" class="form-control">
+											<option value="1" selected="selected">嘉兴市</option><option value="2">南湖区</option><option value="3">秀洲区</option><option value="8">嘉善县</option><option value="6">平湖市</option><option value="7">海盐县</option><option value="5">海宁市</option><option value="4">桐乡市</option><option value="9">其他</option>
+										</select>
+									</div>
+								</div> -->
+								<div class="form-group">
+									<label class="col-md-2 control-label">真实姓名</label>
+									<div class="col-md-4">
+										<input id="realName" name="realName" class="form-control" placeholder="真实姓名" type="text" value="">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label">手机</label>
+									<div class="col-md-4">
+										<input id="mobile" name="mobile" class="form-control" placeholder="手机" readonly="readonly" type="text" value="">
+									</div>
+								</div>
+								<div id="team">
+									<div class="form-group">
+										<label class="col-md-2 control-label">团队账号名称</label>
+										<div class="col-md-4">
+											<input id="nickname" name="nickname" class="form-control" placeholder="团队账号名称" type="text">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 control-label">负责人真实姓名</label>
+										<div class="col-md-4">
+											<input id="chargePerson" name="chargePerson" class="form-control" placeholder="负责人真实姓名" type="text">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 control-label">负责人身份证号码</label>
+										<div class="col-md-4">
+											<input id="chargeNo" name="chargeNo" class="form-control" placeholder="负责人身份证号码" type="text">
+											<div id="id_card_rule"></div>
+										</div>
+									</div>
+								</div>
+								<!-- <div class="form-group">
+									<label class="col-md-2 control-label">单位地址</label>
+									<div class="col-md-4">
+										<input id="address" name="address" class="form-control" placeholder="地址" type="text" value="">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label">单位电话</label>
+									<div class="col-md-4">
+										<input id="unitPhone" name="unitPhone" class="form-control" placeholder="地址" type="text" value="">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label">单位名称</label>
+									<div class="col-md-4">
+										<input id="unitName" name="unitName" class="form-control" placeholder="地址" type="text" value="">
+									</div>
+								</div> -->
+								<!-- <div class="form-group">
+									<label class="col-md-2 control-label">邮编</label>
+									<div class="col-md-4">
+										<input id="zipcode" name="zipcode" class="form-control" placeholder="邮编" type="text" value="">
+									</div>
+								</div> -->
+
+							</fieldset>
+
+							<div class="form-actions">
+								<div class="row">
+									<div class="col-md-2"></div>
+									<div class="col-md-4">
+										<button class="btn-xs btn-primary" type="button" id="btnSubmit" style="background-color: #f4b139;border: 1px solid #f4b139;">提交</button>
+									</div>
+								</div>
+							</div>
+
+						</form>
+					</div>
+					<!-- end widget content -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END MAIN CONTENT -->
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="foot" style=""></div>
+	<script src="static/js/jquery.min.js"></script>
+			<script src="static/js/bootstrap.min.js"></script>
+			<script src="static/js/bootstrap-hover-dropdown.min.js"></script>
+			<script src="static/js/owl.carousel.js"></script>
+			<script src="static/js/modernizr.custom.js"></script>
+			<script src="static/js/jquery.stellar.js"></script>
+			<script src="static/js/jquery.validation.js"></script>
+			<script src="static/js/masonry.pkgd.min.js"></script>
+			<script src="static/js/jquery.pricefilter.js"></script>
+			<script src="static/js/jquery.bxslider.min.js"></script>
+			<script src="static/js/mediaelement-and-player.js"></script>
+			<script src="static/js/waypoints.min.js"></script>
+			<script src="static/js/jquery.spinner.min.js"></script>
+			<script src="static/js/bootbox.min.js"></script>
+			<script src="static/js/theme.plugins.js"></script>
+			<script src="static/js/theme.js"></script>
+			<script src="static/js/frontend-common.js"></script>
+			<script src="static/js/myjs.js"></script>
+			<script src="static/js/utils.js"></script>
+			<script>
+				// 引入common的底部代码
+				$(document).ready(function() {
+					$(".foot").load("common/foot.html");
+					$(".top").load("common/top.html", function() {
+						$('#category').mouseover(function() {
+							$('#dropdown_div').fadeIn()
+						})
+						$('#category').mouseleave(function() {
+							$('#dropdown_div').hide()
+						})
+						$('#dropdown_div').mouseover(function() {
+							$(this).show()
+						})
+						$('#dropdown_div').mouseleave(function() {
+							$(this).hide()
+						})
+					});
+				});
+				if (user) {
+					$('#mobile').val(`${user.phone}`)
+					$('#username').html(`${user.phone}`)
+					$('#realName').val(`${user.nickname}`)
+					// $('#address').val(`${user.unitAddress}`)
+					if(user.types == '2'){
+						$('#type_class').html('团队')
+						$('#address').val(`${user.unitAddress}`)
+						$('#unitPhone').val(`${user.unitPhone}`)
+						$('#unitName').val(`${user.unitName}`)
+						$('#nickname').val(user.nickname)
+						$('#chargePerson').val(user.chargePerson)
+						$('#chargeNo').val(user.chargeNo)
+						$('#team').show()
+					}else{
+						$('#type_class').html('个人')
+						$('#team').hide()
+					}
+					//判断是团队还是个人
+					}
+					$('#btnSubmit').click(function(){
+						let name = $('#realName').val()
+						let idCard = $("#chargeNo").val()
+						if (user.types == '2') {
+							if (!isIdCard(idCard)) {
+								$('#id_card_rule').html('请输入正确的身份证号码')
+								return
+							} else {
+								$('#id_card_rule').html('')
+							}
+						}
+						let data = {
+							id:user.id,
+							name:name,
+							nickname: $("#nickName").val(),
+							chargePerson: $("#chargePerson").val(),
+							chargeNo: idCard
+						}
+						$(this).attr('disabled',true)
+						// https://whgdlyj3.jiaxing.gov.cn/api/member
+						$.ajax({
+							type: "PUT",
+							contentType: "application/json;charset=UTF-8",
+							url: baseUrl + "/api/member",
+							data: JSON.stringify(data),
+							success: function(result) {
+								$(this).attr('disabled',false)
+								user.name = name
+								setUser(user)
+								window.location.reload()
+							}
+						})
+					})
+			</script>
+			<!-- Piwik -->
+			<!-- <script type="text/javascript">
+				var _paq = _paq || [];
+				_paq.push(['trackPageView']);
+				_paq.push(['enableLinkTracking']);
+				(function() {
+					var u = "//logs.wenhuayouyue.com/logs/";
+					_paq.push(['setTrackerUrl', u + 'piwik.php']);
+					_paq.push(['setSiteId', '1']);
+					var d = document,
+						g = d.createElement('script'),
+						s = d.getElementsByTagName('script')[0];
+					g.type = 'text/javascript';
+					g.async = true;
+					g.defer = true;
+					g.src = u + 'piwik.js';
+					s.parentNode.insertBefore(g, s);
+				})();
+			</script>
+			<noscript>
+				<p><img src="static/picture/piwik-1.jpg" style="border:0;" alt=""></p>
+			</noscript> -->
+			<!-- End Piwik Code -->
+
+
+			<!-- <script src="static/js/activityList.js">
+			</script> -->
+
+		</body>
+	</html>
