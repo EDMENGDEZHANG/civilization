@@ -1,5 +1,7 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+.htaccess
+nginx.htaccess
 # Editor-based HTTP Client requests
 /httpRequests/
